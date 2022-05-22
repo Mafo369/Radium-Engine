@@ -77,6 +77,7 @@ set(engine_headers
     Data/ViewingParameters.hpp
     Data/VolumeObject.hpp
     Data/VolumetricMaterial.hpp
+    ForwardDeclarations.hpp
     FrameInfo.hpp
     OpenGL.hpp
     RadiumEngine.hpp

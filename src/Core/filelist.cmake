@@ -95,6 +95,7 @@ set(core_headers
     Containers/Tex.hpp
     Containers/VectorArray.hpp
     CoreMacros.hpp
+    ForwardDeclarations.hpp
     Geometry/AbstractGeometry.hpp
     Geometry/Adjacency.hpp
     Geometry/Area.hpp
