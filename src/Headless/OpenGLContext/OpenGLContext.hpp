@@ -33,7 +33,7 @@ class HEADLESS_API OpenGLContext
      *  The created context is associated with a hidden window that can be shown later.
      * @param size
      */
-    explicit OpenGLContext( const std::array<int, 2>& size = { 1, 1 } );
+    explicit OpenGLContext( const std::array<int, 2>& size = { { 1, 1 } } );
     /// destructor
     ~OpenGLContext();
     /// make the context active
