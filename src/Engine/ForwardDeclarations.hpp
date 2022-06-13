@@ -21,7 +21,6 @@ class VaoIndices;
 class PointCloud;
 class LineMesh;
 class Mesh;
-class PolyMesh;
 class BlinnPhongMaterial;
 class BlinnPhongMaterialConverter;
 class RenderParameters;
