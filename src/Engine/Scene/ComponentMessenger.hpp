@@ -161,13 +161,13 @@ class RA_ENGINE_API ComponentMessenger
                                const std::string& id,
                                const typename CallbackTypes<ReturnType>::Setter& cb );
 
+    void unregisterAll( const Entity* entity, Component* comp );
+
   private:
-    std::unordered_map<const Entity*, CallbackMap>
-        m_entityGetLists; /// Per-entity callback get list.
-    std::unordered_map<const Entity*, CallbackMap>
-        m_entitySetLists; /// Per-entity callback set list.
-    std::unordered_map<const Entity*, CallbackMap>
-        m_entityRwLists; /// Per-entity callback read-write list.
+    using EntityMap = std::unordered_map<const Entity*, CallbackMap>;
+    EntityMap m_entityGetLists; /// Per-entity callback get list.
+    EntityMap m_entitySetLists; /// Per-entity callback set list.
+    EntityMap m_entityRwLists;  /// Per-entity callback read-write list.
 };
 
 } // namespace Scene
