@@ -140,6 +140,14 @@ size_t RenderObjectManager::getNumVertices() const {
     return result;
 }
 
+void RenderObjectManager::setRenderObjectType( const Ra::Core::Utils::Index& index,
+                                               const RenderObjectType& newType ) {
+    auto renderObject = getRenderObject( index );
+    m_renderObjectByType[(int)renderObject->getType()].erase( index );
+    renderObject->setType( newType );
+    m_renderObjectByType[(int)renderObject->getType()].insert( index );
+}
+
 } // namespace Rendering
 } // namespace Engine
 } // namespace Ra

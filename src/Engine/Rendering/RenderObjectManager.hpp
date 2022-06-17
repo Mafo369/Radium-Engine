@@ -73,6 +73,8 @@ class RA_ENGINE_API RenderObjectManager final
      */
     size_t getNumVertices() const;
 
+    void setRenderObjectType( const Ra::Core::Utils::Index& idx, const RenderObjectType& newType );
+
   private:
     Core::Utils::IndexMap<std::shared_ptr<Rendering::RenderObject>> m_renderObjects;
 
