@@ -717,7 +717,7 @@ class PointCloudParameterProvider : public Data::ShaderParameterProvider
  * Render Technique
  */
 bool ForwardRenderer::buildRenderTechnique( RenderObject* ro ) const {
-    if ( ro->getRenderTechnique() ) return true;
+    //    if ( ro->getRenderTechnique() ) return true;
     auto material = ro->getMaterial();
     if ( !material ) {
         LOG( logWARNING ) << "ForwardRenderer : no material found when building RenderTechnique"
