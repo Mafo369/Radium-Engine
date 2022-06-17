@@ -1,3 +1,5 @@
+#include "Engine/Data/ShaderConfigFactory.hpp"
+#include "Engine/Data/ShaderConfiguration.hpp"
 #include <Engine/Rendering/ForwardRenderer.hpp>
 
 #include <Core/Containers/MakeShared.hpp>
@@ -81,6 +83,7 @@ void ForwardRenderer::initShaders() {
                                           resourcesRootDir + "Shaders/Lines/Wireframe.frag.glsl" };
     wireframe.addShader( Data::ShaderType::ShaderType_GEOMETRY,
                          resourcesRootDir + "Shaders/Lines/Wireframe.geom.glsl" );
+    Data::ShaderConfigurationFactory::addConfiguration( wireframe );
     m_shaderProgramManager->addShaderProgram( wireframe );
 }
 
@@ -327,6 +330,7 @@ void ForwardRenderer::renderInternal( const Data::ViewingParameters& renderData 
             l->getRenderParameters( lightingpassParams );
 
             for ( const auto& ro : m_fancyRenderObjects ) {
+
                 ro->render(
                     lightingpassParams, renderData, DefaultRenderingPasses::LIGHTING_OPAQUE );
             }
@@ -556,30 +560,41 @@ void ForwardRenderer::uiInternal( const Data::ViewingParameters& renderData ) {
     GL_ASSERT( glClear( GL_DEPTH_BUFFER_BIT ) );
     for ( const auto& ro : m_uiRenderObjects ) {
         if ( ro->isVisible() ) {
+            std::cerr << ro->getMesh()->getName() << std::endl;
             auto shader = ro->getRenderTechnique()->getShader();
+            if ( !shader ) {
+                LOG( logERROR ) << "shader not found" << ro->getName() << " "
+                                << ro->getRenderTechnique()->getConfiguration().getName();
+            }
+            else {
 
-            // bind data
-            shader->bind();
+                LOG( logERROR ) << "shader found" << ro->getName() << " "
+                                << ro->getRenderTechnique()->getConfiguration().getName();
 
-            Core::Matrix4 M  = ro->getTransformAsMatrix();
-            Core::Matrix4 MV = renderData.viewMatrix * M;
-            Core::Vector3 V  = MV.block<3, 1>( 0, 3 );
-            Scalar d         = V.norm();
+                // bind data
+                shader->bind();
 
-            Core::Matrix4 S    = Core::Matrix4::Identity();
-            S.coeffRef( 0, 0 ) = S.coeffRef( 1, 1 ) = S.coeffRef( 2, 2 ) = d;
+                Core::Matrix4 M  = ro->getTransformAsMatrix();
+                Core::Matrix4 MV = renderData.viewMatrix * M;
+                Core::Vector3 V  = MV.block<3, 1>( 0, 3 );
+                Scalar d         = V.norm();
 
-            M = M * S;
+                Core::Matrix4 S    = Core::Matrix4::Identity();
+                S.coeffRef( 0, 0 ) = S.coeffRef( 1, 1 ) = S.coeffRef( 2, 2 ) = d;
 
-            shader->setUniform( "transform.proj", renderData.projMatrix );
-            shader->setUniform( "transform.view", renderData.viewMatrix );
-            shader->setUniform( "transform.model", M );
+                M = M * S;
 
-            auto shaderParameter = ro->getRenderTechnique()->getParametersProvider();
-            if ( shaderParameter != nullptr ) shaderParameter->getParameters().bind( shader );
+                shader->setUniform( "transform.proj", renderData.projMatrix );
+                shader->setUniform( "transform.view", renderData.viewMatrix );
+                shader->setUniform( "transform.model", M );
 
-            // render
-            ro->getMesh()->render( shader );
+                auto shaderParameter = ro->getRenderTechnique()->getParametersProvider();
+                if ( shaderParameter != nullptr ) shaderParameter->getParameters().bind( shader );
+
+                // render
+
+                ro->getMesh()->render( shader );
+            }
         }
     }
     m_uiXrayFbo->unbind();
@@ -702,6 +717,7 @@ class PointCloudParameterProvider : public Data::ShaderParameterProvider
  * Render Technique
  */
 bool ForwardRenderer::buildRenderTechnique( RenderObject* ro ) const {
+    if ( ro->getRenderTechnique() ) return true;
     auto material = ro->getMaterial();
     if ( !material ) {
         LOG( logWARNING ) << "ForwardRenderer : no material found when building RenderTechnique"
