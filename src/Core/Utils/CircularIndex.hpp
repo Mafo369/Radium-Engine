@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Core/RaCore.hpp>
+#include <stddef.h>
 
 namespace Ra {
 namespace Core {

@@ -1,5 +1,8 @@
 #include <Core/Asset/HandleData.hpp>
 
+#include "Core/Asset/AssetData.hpp"
+#include "Core/Types.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Asset {

@@ -1,15 +1,22 @@
 #pragma once
 
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
-
+#include <Core/Asset/AssetData.hpp>
 #include <Core/Containers/AlignedStdVector.hpp>
 #include <Core/RaCore.hpp>
 #include <Core/Types.hpp>
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/util/Memory.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <map>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
 
-#include <Core/Asset/AssetData.hpp>
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

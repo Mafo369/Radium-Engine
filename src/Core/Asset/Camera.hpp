@@ -3,6 +3,12 @@
 #include <Core/Math/Math.hpp>
 #include <Core/Types.hpp>
 #include <Core/Utils/Observable.hpp>
+#include <Eigen/Core>
+#include <utility>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Asset {

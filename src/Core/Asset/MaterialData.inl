@@ -1,5 +1,6 @@
 #pragma once
 #include <Core/Asset/MaterialData.hpp>
+#include <string>
 
 namespace Ra {
 namespace Core {

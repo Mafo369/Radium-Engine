@@ -1,5 +1,24 @@
 #include <Core/Geometry/TriangleOperation.hpp>
-#include <Core/Math/LinearAlgebra.hpp> // Math::angle
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/Fuzzy.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <algorithm>
+#include <utility>
+
+#include "Core/Math/LinearAlgebra.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

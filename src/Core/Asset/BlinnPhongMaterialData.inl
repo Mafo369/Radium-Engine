@@ -1,6 +1,11 @@
 #pragma once
 #include <Core/Asset/BlinnPhongMaterialData.hpp>
 #include <Core/Utils/Log.hpp>
+#include <Eigen/Core>
+#include <ostream>
+#include <string>
+
+#include "Core/Utils/Color.hpp"
 
 namespace Ra {
 namespace Core {

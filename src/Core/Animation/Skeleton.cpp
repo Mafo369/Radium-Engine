@@ -1,8 +1,17 @@
 #include <Core/Animation/Skeleton.hpp>
-#include <Core/Math/LinearAlgebra.hpp> // Math::clamp
-
+#include <Eigen/Core>
 #include <algorithm>
+#include <ostream>
 #include <stack>
+#include <string>
+#include <type_traits>
+#include <utility>
+#include <vector>
+
+#include "Core/Animation/HandleArray.hpp"
+#include "Core/Animation/HandleArray.inl"
+#include "Core/Containers/AdjacencyList.hpp"
+#include "Core/Containers/AlignedStdVector.hpp"
 
 namespace Ra {
 namespace Core {

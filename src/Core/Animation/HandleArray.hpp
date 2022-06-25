@@ -3,6 +3,11 @@
 #include <Core/Animation/Pose.hpp>
 #include <Core/RaCore.hpp>
 #include <Core/Types.hpp>
+#include <string>
+#include <type_traits>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

@@ -1,9 +1,33 @@
 #include <Core/Geometry/Normal.hpp>
-
 #include <Core/Geometry/TriangleOperation.hpp>
-#include <Core/Math/LinearAlgebra.hpp> // Math::angle
 #include <Core/Utils/CircularIndex.hpp>
-#include <Core/Utils/Timer.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/BooleanRedux.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/Fuzzy.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <Eigen/src/SparseCore/SparseMatrix.h>
+#include <ext/alloc_traits.h>
+#include <memory>
+#include <stddef.h>
+#include <vector>
+
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Math/LinearAlgebra.inl"
+#include "Core/Types.hpp"
+#include "Core/Utils/CircularIndex.inl"
 
 namespace Ra {
 namespace Core {

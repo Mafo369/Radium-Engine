@@ -1,8 +1,7 @@
 #pragma once
 
-#include <map>
-
 #include <Core/RaCore.hpp>
+#include <map>
 
 namespace Ra {
 namespace Core {

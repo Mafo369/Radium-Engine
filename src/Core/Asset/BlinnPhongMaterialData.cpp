@@ -1,5 +1,7 @@
 #include <Core/Asset/BlinnPhongMaterialData.hpp>
 
+#include "Core/Asset/MaterialData.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Asset {

@@ -1,12 +1,49 @@
 #include <Core/Geometry/TopologicalMesh.hpp>
-
-#include <Core/RaCore.hpp>
 #include <Core/Utils/Log.hpp>
-
-#include <Eigen/StdVector>
-
+#include <Eigen/src/Core/BooleanRedux.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/IO.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/SelfCwiseBinaryOp.h>
+#include <Eigen/src/Core/Transpose.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <OpenMesh/Core/IO/StoreRestore.hh>
+#include <OpenMesh/Core/Mesh/AttribKernelT.hh>
+#include <OpenMesh/Core/Mesh/CirculatorsT.hh>
+#include <OpenMesh/Core/Mesh/FinalMeshItemsT.hh>
+#include <OpenMesh/Core/Mesh/IteratorsT.hh>
+#include <OpenMesh/Core/Mesh/PolyConnectivity.hh>
+#include <OpenMesh/Core/Mesh/SmartHandles.hh>
+#include <algorithm>
+#include <assert.h>
+#include <ext/alloc_traits.h>
+#include <initializer_list>
+#include <memory>
+#include <new>
+#include <numeric>
+#include <ostream>
 #include <utility>
 #include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/OpenMesh.hpp"
+#include "Core/Geometry/TopologicalMesh.inl"
+#include "Core/Geometry/TriangleMesh.hpp"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Geometry/TriangleOperation.hpp"
+#include "Core/Types.hpp"
+#include "Core/Utils/Attribs.inl"
+#include "Core/Utils/Index.hpp"
 
 namespace Ra {
 namespace Core {

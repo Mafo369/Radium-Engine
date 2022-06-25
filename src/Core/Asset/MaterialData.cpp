@@ -1,5 +1,8 @@
 #include <Core/Asset/MaterialData.hpp>
 #include <Core/Utils/Log.hpp>
+#include <ostream>
+
+#include "Core/Asset/AssetData.hpp"
 
 namespace Ra {
 namespace Core {

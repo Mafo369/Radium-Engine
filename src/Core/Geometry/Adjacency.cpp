@@ -1,5 +1,40 @@
 #include <Core/Geometry/Adjacency.hpp>
-#include <Core/Math/LinearAlgebra.hpp> // Math::cotan
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/Block.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/CwiseUnaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Diagonal.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/Memory.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <Eigen/src/SparseCore/SparseAssign.h>
+#include <Eigen/src/SparseCore/SparseMatrix.h>
+#include <Eigen/src/SparseCore/SparseMatrixBase.h>
+#include <Eigen/src/SparseCore/SparseRedux.h>
+#include <Eigen/src/SparseCore/SparseUtil.h>
+#include <algorithm>
+#include <ext/alloc_traits.h>
+#include <new>
+#include <string.h>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Math/LinearAlgebra.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

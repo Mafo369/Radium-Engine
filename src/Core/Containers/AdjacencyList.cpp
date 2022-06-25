@@ -1,6 +1,13 @@
+#include "Core/Containers/AdjacencyList.inl"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Containers/VectorArray.hpp"
 #include <Core/Containers/AdjacencyList.hpp>
 
+#include <Eigen/Core>
+
 #include <fstream>
+#include <memory>
+#include <string>
 
 namespace Ra {
 namespace Core {
@@ -130,7 +137,7 @@ std::ofstream& operator<<( std::ofstream& ofs, const AdjacencyList& adj ) {
     const std::string comment { "#ID PARENT nCHILDREN CHILDREN\n" };
     const uint size = adj.size();
 
-    ofs << header + comment + std::to_string( size ) + "\n";
+    ofs << header + comment + std::to_string( size ) + std::string( "\n" );
     for ( uint i = 0; i < size; ++i ) {
         uint c;
         ofs << std::to_string( i ) + " " + std::to_string( adj.parents()[i] ) + " " +

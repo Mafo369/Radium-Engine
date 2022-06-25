@@ -1,16 +1,44 @@
-#include <Core/Animation/RotationCenterSkinning.hpp>
-
-#include <array>
-#include <unordered_map>
-
 #include <Core/Animation/DualQuaternionSkinning.hpp>
 #include <Core/Animation/HandleWeight.hpp>
-#include <Core/Animation/LinearBlendSkinning.hpp>
-#include <Core/Animation/Pose.hpp>
+#include <Core/Animation/RotationCenterSkinning.hpp>
 #include <Core/Animation/SkinningData.hpp>
 #include <Core/Geometry/TopologicalMesh.hpp>
 #include <Core/Geometry/TriangleOperation.hpp> // triangleArea
 #include <Core/Utils/Log.hpp>
+#include <Eigen/Core>
+#include <Eigen/Sparse>
+
+#include <OpenMesh/Core/Mesh/ArrayKernel.hh>
+#include <OpenMesh/Core/Mesh/Handles.hh>
+#include <OpenMesh/Core/Mesh/IteratorsT.hh>
+#include <OpenMesh/Core/Mesh/PolyConnectivity_inline_impl.hh>
+#include <OpenMesh/Core/Mesh/PolyMeshT.hh>
+#include <OpenMesh/Core/Mesh/SmartHandles.hh>
+#include <algorithm>
+#include <cmath>
+#include <map>
+#include <memory>
+#include <new>
+#include <ostream>
+#include <set>
+#include <stdlib.h>
+#include <string>
+#include <tuple>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+#include "Core/Animation/HandleArray.hpp"
+#include "Core/Animation/Skeleton.hpp"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/TopologicalMesh.inl"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Math/DualQuaternion.inl"
+#include "Core/Math/Math.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

@@ -7,9 +7,17 @@
 #include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Color.hpp>
 #include <Core/Utils/Observable.hpp>
+#include <Eigen/src/Core/util/Memory.h>
+#include <string>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/Utils/Attribs.inl"
 
 namespace Ra {
 namespace Core {
+template <typename V>
+class VectorArray;
+
 namespace Geometry {
 
 /// \brief This class represents vertex + attributes per vertex. Toplogy is handled in

@@ -1,5 +1,11 @@
 #pragma once
 #include <Core/Containers/AdjacencyList.hpp>
+#include <ext/alloc_traits.h>
+#include <memory>
+#include <vector>
+
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

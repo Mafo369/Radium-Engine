@@ -1,24 +1,41 @@
 #pragma once
 
-#include <Core/RaCore.hpp>
-
 #include <Core/Containers/VectorArray.hpp>
 #include <Core/Geometry/OpenMesh.hpp>
 #include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/RaCore.hpp>
 #include <Core/Types.hpp>
 #include <Core/Utils/Index.hpp>
 #include <Core/Utils/StdOptional.hpp>
-
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/util/Memory.h>
+#include <OpenMesh/Core/Mesh/ArrayKernel.hh>
+#include <OpenMesh/Core/Mesh/Attributes.hh>
+#include <OpenMesh/Core/Mesh/Handles.hh>
+#include <OpenMesh/Core/Mesh/PolyConnectivity_inline_impl.hh>
+#include <OpenMesh/Core/Mesh/PolyMeshT.hh>
 #include <OpenMesh/Core/Mesh/PolyMesh_ArrayKernelT.hh>
 #include <OpenMesh/Core/Mesh/Traits.hh>
 #include <OpenMesh/Core/Mesh/TriMesh_ArrayKernelT.hh>
 #include <OpenMesh/Core/Utils/Property.hh>
 #include <OpenMesh/Core/Utils/PropertyManager.hh>
-
-#include <Eigen/Core>
-#include <Eigen/Geometry>
-
+#include <iterator>
+#include <map>
 #include <set>
+#include <stddef.h>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/Index.inl"
+#include "Core/Utils/Log.hpp"
 
 namespace Ra {
 namespace Core {
@@ -62,6 +79,7 @@ class RA_CORE_API TopologicalMesh : public OpenMesh::PolyMesh_ArrayKernelT<Topol
   public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
     class WedgeData;
+
     using WedgeIndex       = Ra::Core::Utils::Index;
     using WedgeAttribIndex = Ra::Core::Utils::Index;
 

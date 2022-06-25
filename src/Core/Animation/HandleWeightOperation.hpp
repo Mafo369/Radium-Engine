@@ -1,6 +1,11 @@
 #pragma once
 
 #include <Core/Animation/HandleWeight.hpp>
+#include <Eigen/SparseCore>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
 
 namespace Ra {
 namespace Core {

@@ -10,9 +10,6 @@
 #endif
 */
 
-#include <algorithm> // std::min std::max
-#include <memory>
-
 namespace Ra {
 namespace Core {
 namespace Utils {

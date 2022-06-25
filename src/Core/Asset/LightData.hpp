@@ -1,12 +1,17 @@
 #pragma once
 
+#include <Core/Asset/AssetData.hpp>
+#include <Core/RaCore.hpp>
+#include <Core/Utils/Color.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/util/Memory.h>
 #include <memory>
 #include <string>
 #include <vector>
 
-#include <Core/Asset/AssetData.hpp>
-#include <Core/RaCore.hpp>
-#include <Core/Utils/Color.hpp>
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

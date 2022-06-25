@@ -1,12 +1,17 @@
 #pragma once
 
-#include <string>
-#include <vector>
-
 #include <Core/Animation/KeyFramedValue.hpp>
 #include <Core/Asset/AnimationTime.hpp>
 #include <Core/Asset/AssetData.hpp>
 #include <Core/RaCore.hpp>
+#include <Eigen/Core>
+#include <algorithm>
+#include <string>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/Math/Math.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

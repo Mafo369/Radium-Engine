@@ -3,12 +3,36 @@
 #include <Core/Geometry/AbstractGeometry.hpp>
 #include <Core/RaCore.hpp>
 #include <Core/Types.hpp>
+#include <Eigen/src/Core/ArrayBase.h>
+#include <Eigen/src/Core/ArrayWrapper.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/BooleanRedux.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/CwiseUnaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/Ref.h>
+#include <Eigen/src/Core/Stride.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <stddef.h>
 
 #define RA_REQUIRE_OPTIONAL
 #include <Core/Utils/StdOptional.hpp> // trigger an error if optional is not found
+
 #undef RA_REQUIRE_OPTIONAL
 
 #include <algorithm> // find_if
+#include <iterator>
+#include <new>
+#include <optional>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

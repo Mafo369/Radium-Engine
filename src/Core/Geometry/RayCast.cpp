@@ -1,6 +1,38 @@
 #include <Core/Geometry/RayCast.hpp>
-#include <Core/Geometry/TriangleMesh.hpp>
-#include <Core/Math/LinearAlgebra.hpp> // Math::sign
+#include <Eigen/src/Core/ArrayBase.h>
+#include <Eigen/src/Core/ArrayWrapper.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/BooleanRedux.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/CwiseUnaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/Select.h>
+#include <Eigen/src/Core/Visitor.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/AlignedBox.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <Eigen/src/Geometry/ParametrizedLine.h>
+#include <algorithm>
+#include <limits>
+#include <stddef.h>
+#include <utility>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Math/Math.inl"
+#include "Core/Types.hpp"
+#include "Core/Utils/Attribs.hpp"
 
 namespace Ra {
 namespace Core {

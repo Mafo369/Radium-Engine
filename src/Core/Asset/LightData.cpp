@@ -1,4 +1,8 @@
 #include <Core/Asset/LightData.hpp>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/MatrixBase.h>
+
+#include "Core/Asset/AssetData.hpp"
 
 namespace Ra {
 namespace Core {

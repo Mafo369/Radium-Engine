@@ -1,6 +1,14 @@
 #pragma once
 #include <Core/Asset/LightData.hpp>
 #include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <ostream>
+#include <string>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/Utils/Color.hpp"
 
 namespace Ra {
 namespace Core {

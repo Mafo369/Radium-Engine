@@ -1,6 +1,18 @@
 #include <Core/Geometry/StandardAttribNames.hpp>
 #include <Core/Geometry/TriangleMesh.hpp>
 #include <Core/Types.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <algorithm>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/Color.hpp"
+#include "Core/Utils/Index.inl"
 
 namespace Ra {
 namespace Core {

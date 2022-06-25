@@ -1,10 +1,9 @@
 // from
 // https://github.com/sammycage/lunasvg/blob/7f82e941270aad040922798c210ce0e2c1eb58aa/source/parser.cpp
 #include <Core/Utils/Color.hpp>
-
 #include <cstdint>
 #include <map>
-#include <string>
+#include <utility>
 
 namespace Ra {
 namespace Core {

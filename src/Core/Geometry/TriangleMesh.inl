@@ -1,11 +1,29 @@
 #pragma once
 #include "TriangleMesh.hpp"
+
 #include <Core/Geometry/StandardAttribNames.hpp>
 #include <Core/Geometry/TriangleOperation.hpp> // triangleArea
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <algorithm>
+#include <map>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Geometry/AbstractGeometry.hpp"
+#include "Core/Types.hpp"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/Attribs.inl"
+#include "Core/Utils/Index.inl"
+
 
 namespace Ra {
 namespace Core {
 namespace Geometry {
+class AttribArrayGeometry;
 
 inline AttribArrayGeometry ::AttribArrayGeometry( const AttribArrayGeometry& other ) :
     AbstractGeometry( other ) {

@@ -1,24 +1,31 @@
 #pragma once
 
-#include <Core/RaCore.hpp>
-
 #include <Core/Containers/VectorArray.hpp>
 #include <Core/Geometry/OpenMesh.hpp>
 #include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/RaCore.hpp>
 #include <Core/Types.hpp>
 #include <Core/Utils/Index.hpp>
 #include <Core/Utils/StdOptional.hpp>
-
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+#include <Eigen/src/Core/util/Memory.h>
+#include <OpenMesh/Core/Mesh/Attributes.hh>
+#include <OpenMesh/Core/Mesh/PolyConnectivity_inline_impl.hh>
+#include <OpenMesh/Core/Mesh/PolyMeshT.hh>
 #include <OpenMesh/Core/Mesh/PolyMesh_ArrayKernelT.hh>
 #include <OpenMesh/Core/Mesh/Traits.hh>
 #include <OpenMesh/Core/Mesh/TriMesh_ArrayKernelT.hh>
 #include <OpenMesh/Core/Utils/Property.hh>
 #include <OpenMesh/Core/Utils/PropertyManager.hh>
-
-#include <Eigen/Core>
-#include <Eigen/Geometry>
-
+#include <iterator>
 #include <set>
+#include <utility>
+#include <vector>
+
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/Log.hpp"
 
 namespace Ra {
 namespace Core {

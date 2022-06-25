@@ -1,4 +1,27 @@
 #include <Core/Geometry/PolyLine.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <algorithm>
+#include <ext/alloc_traits.h>
+#include <limits>
+#include <memory>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Geometry/DistanceQueries.inl"
+#include "Core/Geometry/PolyLine.inl"
+#include "Core/Math/LinearAlgebra.inl"
+#include "Core/Math/Math.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

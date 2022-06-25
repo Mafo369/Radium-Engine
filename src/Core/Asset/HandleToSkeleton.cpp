@@ -1,10 +1,22 @@
-#include <Core/Asset/HandleToSkeleton.hpp>
-
-#include <set>
-
 #include <Core/Animation/Skeleton.hpp>
 #include <Core/Asset/HandleData.hpp>
+#include <Core/Asset/HandleToSkeleton.hpp>
 #include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <map>
+#include <ostream>
+#include <set>
+#include <string>
+#include <vector>
+
+#include "Core/Animation/HandleArray.hpp"
+#include "Core/Animation/HandleArray.inl"
+#include "Core/Asset/HandleData.inl"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Types.hpp"
 
 using namespace Ra::Core::Utils;
 

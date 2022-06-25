@@ -1,12 +1,19 @@
 #pragma once
 
 #include <Core/Containers/VectorArray.hpp>
+#include <Core/Geometry/Adjacency.hpp>
 #include <Core/Types.hpp>
 
-#include <Core/Geometry/Adjacency.hpp>
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
 
 namespace Ra {
 namespace Core {
+template <typename T>
+struct AlignedStdVector;
+template <typename V>
+class VectorArray;
+
 namespace Geometry {
 
 /**

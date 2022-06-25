@@ -2,8 +2,35 @@
 #include <Core/Geometry/MeshPrimitives.hpp>
 #include <Core/Geometry/TopologicalMesh.hpp>
 #include <Core/Math/LinearAlgebra.hpp> // Math::pi
-
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <OpenMesh/Core/System/config.h>
+#include <ext/alloc_traits.h>
+#include <OpenMesh/Core/Mesh/PolyMeshT.hh>
 #include <random>
+#include <algorithm>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/StandardAttribNames.hpp"
+#include "Core/Geometry/TopologicalMesh.inl"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Math/Math.hpp"
+#include "Core/Types.hpp"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/Attribs.inl"
+#include "Core/Utils/Color.hpp"
+#include "Core/Utils/Index.hpp"
+#include "Core/Utils/Index.inl"
+#include "Core/Utils/StdOptional.hpp"
+
 
 namespace Ra {
 namespace Core {

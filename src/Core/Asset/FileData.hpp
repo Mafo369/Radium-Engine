@@ -1,10 +1,11 @@
 #pragma once
 
+#include <Core/RaCore.hpp>
 #include <memory>
 #include <string>
 #include <vector>
 
-#include <Core/RaCore.hpp>
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

@@ -1,8 +1,9 @@
 #pragma once
 
+#include <Core/Containers/VectorArray.hpp>
 #include <Core/RaCore.hpp>
 
-#include <Core/Containers/VectorArray.hpp>
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

@@ -2,6 +2,14 @@
 
 #include <Core/Animation/HandleArray.hpp>
 #include <Core/Containers/AdjacencyList.hpp>
+#include <iosfwd>
+#include <memory>
+
+#include "Core/Animation/Pose.hpp"
+#include "Core/Containers/AdjacencyList.inl"
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

@@ -1,18 +1,19 @@
 #pragma once
 
-#include <memory>
-#include <string>
-#include <vector>
-
+#include <Core/Asset/AssetData.hpp>
+#include <Core/Asset/MaterialData.hpp>
 #include <Core/Containers/VectorArray.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
 #include <Core/RaCore.hpp>
 #include <Core/Types.hpp>
 #include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Index.hpp>
+#include <Eigen/src/Core/util/Memory.h>
+#include <memory>
+#include <string>
+#include <vector>
 
-#include <Core/Asset/AssetData.hpp>
-#include <Core/Asset/MaterialData.hpp>
-#include <Core/Geometry/TriangleMesh.hpp>
+#include "Core/Geometry/IndexedGeometry.hpp"
 
 namespace Ra {
 namespace Core {

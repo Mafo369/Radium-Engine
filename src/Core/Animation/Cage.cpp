@@ -1,5 +1,9 @@
 #include <Core/Animation/Cage.hpp>
 
+#include "Core/Animation/HandleArray.hpp"
+#include "Core/Animation/Pose.hpp"
+#include "Core/Containers/VectorArray.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Animation {

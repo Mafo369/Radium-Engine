@@ -1,5 +1,7 @@
 #include <Core/Utils/CircularIndex.hpp>
 
+#include "Core/Utils/CircularIndex.inl"
+
 namespace Ra {
 namespace Core {
 namespace Utils {

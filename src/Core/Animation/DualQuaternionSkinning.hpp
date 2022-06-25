@@ -6,6 +6,8 @@
 #include <Core/Containers/VectorArray.hpp>
 #include <Core/Math/DualQuaternion.hpp>
 
+#include "Core/RaCore.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Animation {

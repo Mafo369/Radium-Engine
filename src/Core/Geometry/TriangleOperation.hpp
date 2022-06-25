@@ -2,6 +2,9 @@
 
 #include <Core/Types.hpp>
 
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Geometry {

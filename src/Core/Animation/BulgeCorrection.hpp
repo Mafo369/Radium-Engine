@@ -4,9 +4,14 @@
 #include <Core/Containers/AdjacencyList.hpp>
 #include <Core/Containers/VectorArray.hpp>
 #include <Core/Types.hpp>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {
+class AdjacencyList;
+
 namespace Animation {
 
 using Dv             = Vector1Array;

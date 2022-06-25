@@ -1,9 +1,8 @@
 #pragma once
-#include <string>
-#include <vector>
-
 #include <Core/Asset/AssetData.hpp>
 #include <Core/RaCore.hpp>
+#include <string>
+#include <vector>
 
 namespace Ra {
 namespace Core {

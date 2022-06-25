@@ -1,8 +1,14 @@
 #pragma once
 #include "Core/Geometry/StandardAttribNames.hpp"
 #include <Core/Asset/GeometryData.hpp>
-
 #include <algorithm> //std::transform
+#include <memory>
+#include <string>
+
+#include "Core/Asset/MaterialData.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

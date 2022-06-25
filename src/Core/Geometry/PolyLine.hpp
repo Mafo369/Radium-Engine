@@ -4,6 +4,9 @@
 #include <Core/Geometry/DistanceQueries.hpp>
 #include <Core/RaCore.hpp>
 #include <Core/Types.hpp>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

@@ -982,44 +982,42 @@ void MinimalComponent::initialize() {
         updateCellCorner( cellCorner, cellSize, nCellX, nCellY );
         updateCellCorner( cellCorner, cellSize, nCellX, nCellY );
 
-        auto addSplitScene =
-            [findHalfedge, addMesh, &cellCorner, toCellCenter, cellSize, nCellX, nCellY](
-                Vector3 pos,
-                const Vector3Array& points,
-                const Vector4Array& colors,
-                const Vector3uArray& indices,
-                Vector3 from,
-                Vector3 to ) {
-                TriangleMesh mesh;
-                TopologicalMesh topo;
-                optional<TopologicalMesh::HalfedgeHandle> optHe;
-                Vector3 up { 0_ra, .05_ra, 0_ra };
+        auto addSplitScene = [findHalfedge, addMesh]( Vector3 pos,
+                                                      const Vector3Array& points,
+                                                      const Vector4Array& colors,
+                                                      const Vector3uArray& indices,
+                                                      Vector3 from,
+                                                      Vector3 to ) {
+            TriangleMesh mesh;
+            TopologicalMesh topo;
+            optional<TopologicalMesh::HalfedgeHandle> optHe;
+            Vector3 up { 0_ra, .05_ra, 0_ra };
 
-                mesh.setVertices( points );
-                mesh.addAttrib( Ra::Core::Geometry::getAttribName(
-                                    Ra::Core::Geometry::MeshAttrib::VERTEX_COLOR ),
-                                Vector4Array { colors.begin(), colors.begin() + points.size() } );
-                mesh.setIndices( indices );
+            mesh.setVertices( points );
+            mesh.addAttrib(
+                Ra::Core::Geometry::getAttribName( Ra::Core::Geometry::MeshAttrib::VERTEX_COLOR ),
+                Vector4Array { colors.begin(), colors.begin() + points.size() } );
+            mesh.setIndices( indices );
 
-                topo = TopologicalMesh { mesh };
-                topo.mergeEqualWedges();
-                topo.garbage_collection();
+            topo = TopologicalMesh { mesh };
+            topo.mergeEqualWedges();
+            topo.garbage_collection();
 
-                addMesh( pos, topo );
+            addMesh( pos, topo );
 
-                for ( int i = 0; i < 2; ++i ) {
-                    for ( auto f : { 0.25_ra, 0.5_ra, 0.75_ra } ) {
-                        pos += up;
-                        topo      = TopologicalMesh { mesh };
-                        optHe     = findHalfedge( topo, from, to );
-                        auto edge = topo.edge_handle( *optHe );
-                        topo.mergeEqualWedges();
-                        topo.splitEdge( edge, f );
-                        addMesh( pos, topo );
-                    }
-                    std::swap( from, to );
+            for ( int i = 0; i < 2; ++i ) {
+                for ( auto f : { 0.25_ra, 0.5_ra, 0.75_ra } ) {
+                    pos += up;
+                    topo      = TopologicalMesh { mesh };
+                    optHe     = findHalfedge( topo, from, to );
+                    auto edge = topo.edge_handle( *optHe );
+                    topo.mergeEqualWedges();
+                    topo.splitEdge( edge, f );
+                    addMesh( pos, topo );
                 }
-            };
+                std::swap( from, to );
+            }
+        };
         Vector3 dx  = Vector3( cellSize / 8_ra, 0_ra, 0_ra );
         Vector3 pos = cellCorner;
         pos[2] += toCellCenter[2];

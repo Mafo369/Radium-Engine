@@ -1,7 +1,26 @@
 #pragma once
+#include <Eigen/src/Core/Matrix.h>
+#include <stddef.h>
+#include <iterator>
+#include <map>
+#include <memory>
+#include <string>
+#include <type_traits>
+#include <utility>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
+#include "Core/Utils/Index.hpp"
+#include "Core/Utils/Index.inl"
+
 namespace Ra {
 namespace Core {
 namespace Utils {
+class AttribBase;
+class AttribManager;
+template <typename T> class Attrib;
+template <typename T> class AttribHandle;
 
 AttribBase::AttribBase( const std::string& name ) : m_name { name } {}
 

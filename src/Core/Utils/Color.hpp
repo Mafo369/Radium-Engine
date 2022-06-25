@@ -4,7 +4,20 @@
 #include <Core/Math/Math.hpp>
 #include <Eigen/Core>
 #include <Eigen/Geometry> //homogeneous
+#include <algorithm>
+#include <math.h>
 #include <random>
+#include <stdint.h>
+#include <string_view>
+#include <vector>
+
+#include "Core/Math/Math.inl"
+#include "Core/RaCore.hpp"
+
+namespace Eigen {
+template <typename Derived>
+class MatrixBase;
+} // namespace Eigen
 
 namespace Ra {
 namespace Core {

@@ -5,6 +5,8 @@
 #include <Eigen/Core>
 #include <vector>
 
+#include "Core/CoreMacros.hpp"
+
 // useful : http://www.realtimerendering.com/intersections.html
 
 namespace Ra {

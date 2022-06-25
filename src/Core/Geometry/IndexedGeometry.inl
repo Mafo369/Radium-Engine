@@ -1,11 +1,30 @@
 #pragma once
 
 #include <Core/Geometry/IndexedGeometry.hpp>
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/BooleanRedux.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <stddef.h>
 #include <memory>
+#include <set>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Types.hpp"
+#include "Core/Utils/ObjectWithSemantic.hpp"
+#include "Core/Utils/StdMapIterators.hpp"
 
 namespace Ra {
 namespace Core {
 namespace Geometry {
+class GeometryIndexLayerBase;
+template <typename T> struct GeometryIndexLayer;
 
 //  GeometryIndexLayerBase
 inline GeometryIndexLayerBase::GeometryIndexLayerBase( const GeometryIndexLayerBase& other ) :

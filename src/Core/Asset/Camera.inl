@@ -1,6 +1,16 @@
 #pragma once
 
 #include <Core/Asset/Camera.hpp>
+#include <Eigen/Core>
+#include <Eigen/Geometry>
+#include <Eigen/Householder>
+#include <Eigen/SVD>
+#include <algorithm>
+#include <utility>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/Types.hpp"
+
 
 namespace Ra {
 namespace Core {

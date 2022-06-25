@@ -4,6 +4,11 @@
 #include <Core/Geometry/Area.hpp>          // Geometry::AreaMatrix
 #include <Core/Geometry/Laplacian.hpp>     // Geometry::LaplacianMatrix
 #include <Core/RaCore.hpp>
+#include <stdint.h>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

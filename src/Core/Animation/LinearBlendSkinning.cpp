@@ -1,6 +1,17 @@
 #include <Core/Animation/LinearBlendSkinning.hpp>
-
 #include <Core/Animation/SkinningData.hpp>
+#include <Eigen/Core>
+#include <vector>
+
+#include "Core/Animation/HandleArray.hpp"
+#include "Core/Animation/HandleWeight.hpp"
+#include "Core/Animation/Skeleton.hpp"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

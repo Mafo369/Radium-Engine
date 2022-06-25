@@ -1,16 +1,19 @@
 #pragma once
 
 #include <Core/RaCore.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/Timer.hpp> // Ra::Core::TimePoint
 #include <condition_variable>
 #include <deque>
+#include <iosfwd>
 #include <memory>
 #include <mutex>
 #include <string>
 #include <thread>
+#include <utility>
 #include <vector>
 
-#include <Core/Utils/Index.hpp>
-#include <Core/Utils/Timer.hpp> // Ra::Core::TimePoint
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

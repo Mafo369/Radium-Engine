@@ -1,11 +1,18 @@
 #pragma once
-#include <map>
-
 #include <Core/Containers/VectorArray.hpp>
 #include <Core/RaCore.hpp>
 #include <Core/Utils/ContainerIntrospectionInterface.hpp>
 #include <Core/Utils/Index.hpp>
 #include <Core/Utils/Observable.hpp>
+#include <map>
+#include <memory>
+#include <stddef.h>
+#include <string>
+#include <type_traits>
+#include <utility>
+#include <vector>
+
+#include "Core/Utils/Index.inl"
 
 namespace Ra {
 namespace Core {

@@ -1,4 +1,31 @@
 #include <Core/Geometry/CatmullClarkSubdivider.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/SelfCwiseBinaryOp.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <OpenMesh/Core/IO/StoreRestore.hh>
+#include <OpenMesh/Core/Mesh/ArrayKernel.hh>
+#include <OpenMesh/Core/Mesh/AttribKernelT.hh>
+#include <OpenMesh/Core/Mesh/CirculatorsT.hh>
+#include <OpenMesh/Core/Mesh/Handles.hh>
+#include <OpenMesh/Core/Mesh/IteratorsT.hh>
+#include <OpenMesh/Core/Mesh/PolyConnectivity_inline_impl.hh>
+#include <OpenMesh/Core/Mesh/SmartHandles.hh>
+#include <OpenMesh/Core/System/config.h>
+#include <ext/alloc_traits.h>
+#include <memory>
+#include <numeric>
+
+#include "Core/Geometry/deprecated/TopologicalMesh.hpp"
+#include "Core/Geometry/deprecated/TopologicalMesh.inl"
+#include "Core/Utils/Index.hpp"
+#include "Core/Utils/Index.inl"
 
 namespace Ra {
 namespace Core {

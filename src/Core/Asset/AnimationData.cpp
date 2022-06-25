@@ -1,5 +1,7 @@
 #include <Core/Asset/AnimationData.hpp>
 
+#include "Core/Asset/AssetData.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Asset {

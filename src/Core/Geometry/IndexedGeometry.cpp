@@ -1,5 +1,21 @@
 #include <Core/Geometry/IndexedGeometry.hpp>
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <algorithm>
 #include <iterator>
+#include <ostream>
+#include <set>
+#include <stddef.h>
+#include <stdexcept>
+#include <type_traits>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/TriangleMesh.hpp"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Utils/Attribs.hpp"
 
 namespace Ra {
 namespace Core {
@@ -50,10 +66,7 @@ void MultiIndexedGeometry::copy( const MultiIndexedGeometry& other ) {
 }
 
 /// \todo Implement MultiIndexedGeometry::checkConsistency
-void MultiIndexedGeometry::checkConsistency() const {
-#ifdef CORE_DEBUG
-#endif
-}
+void MultiIndexedGeometry::checkConsistency() const {}
 
 bool MultiIndexedGeometry::append( const MultiIndexedGeometry& other ) {
     bool dataHasBeenCopied = false;

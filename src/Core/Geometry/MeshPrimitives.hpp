@@ -5,6 +5,10 @@
 #include <Core/Utils/Color.hpp>
 #include <Core/Utils/StdOptional.hpp>
 
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Types.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Geometry {

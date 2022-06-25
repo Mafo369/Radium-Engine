@@ -1,9 +1,28 @@
-#include <Core/Animation/StretchableTwistableBoneSkinning.hpp>
-
 #include <Core/Animation/PoseOperation.hpp>
 #include <Core/Animation/Skeleton.hpp>
 #include <Core/Animation/SkinningData.hpp>
-#include <Core/Geometry/DistanceQueries.hpp>
+#include <Core/Animation/StretchableTwistableBoneSkinning.hpp>
+#include <Eigen/Core>
+#include <algorithm>
+#include <limits>
+#include <memory>
+#include <new>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "Core/Animation/HandleArray.hpp"
+#include "Core/Animation/HandleWeight.hpp"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/DistanceQueries.inl"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Math/DualQuaternion.hpp"
+#include "Core/Math/DualQuaternion.inl"
+#include "Core/Math/Math.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

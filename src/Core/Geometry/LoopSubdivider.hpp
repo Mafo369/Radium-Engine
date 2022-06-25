@@ -2,7 +2,19 @@
 
 #include <Core/Geometry/deprecated/TopologicalMesh.hpp>
 #include <Core/Math/LinearAlgebra.hpp> // Math::pi
+#include <OpenMesh/Core/Mesh/PolyMeshT.hh>
+#include <OpenMesh/Core/Utils/Property.hh>
 #include <OpenMesh/Tools/Subdivider/Uniform/SubdividerT.hh>
+#include <algorithm>
+#include <math.h>
+#include <stddef.h>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Math/Math.hpp"
+#include "Core/RaCore.hpp"
 
 namespace Ra {
 namespace Core {

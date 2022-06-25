@@ -2,6 +2,10 @@
 
 #include <Core/Asset/MaterialData.hpp>
 #include <Core/Utils/Color.hpp>
+#include <string>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
 
 namespace Ra {
 namespace Core {

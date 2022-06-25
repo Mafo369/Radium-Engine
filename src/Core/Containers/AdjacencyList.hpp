@@ -4,6 +4,11 @@
 #include <Core/Containers/VectorArray.hpp>
 #include <Eigen/Core>
 #include <iostream>
+#include <stdint.h>
+#include <vector>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/RaCore.hpp"
 
 namespace Ra {
 namespace Core {

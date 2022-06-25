@@ -1,6 +1,23 @@
 #include <Core/Animation/BulgeCorrection.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <memory>
 
-#include <Core/Geometry/DistanceQueries.hpp>
+#include "Core/Animation/Pose.hpp"
+#include "Core/Containers/AdjacencyList.hpp"
+#include "Core/Containers/AdjacencyList.inl"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Geometry/DistanceQueries.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

@@ -3,9 +3,39 @@
 #include <Core/Geometry/StandardAttribNames.hpp>
 #include <Core/Math/Math.hpp> // areApproxEqual
 #include <Core/Types.hpp>
-
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/Block.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/Stride.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <OpenMesh/Core/System/config.h>
+#include <algorithm>
 #include <array>
-#include <string>
+#include <ext/alloc_traits.h>
+#include <memory>
+#include <new>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/Grid.inl"
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Math/LinearAlgebra.inl"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/Attribs.inl"
+#include "Core/Utils/Color.hpp"
+#include "Core/Utils/Index.inl"
+#include "Core/Utils/StdOptional.hpp"
 
 namespace Ra {
 namespace Core {

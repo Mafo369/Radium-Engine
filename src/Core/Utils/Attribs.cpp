@@ -1,6 +1,15 @@
 #include <Core/Types.hpp>
 #include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <algorithm>
+#include <ostream>
+
+#include "Core/CoreMacros.hpp"
+#include "Core/Utils/Attribs.inl"
+#include "Core/Utils/Index.hpp"
 
 namespace Ra {
 namespace Core {

@@ -1,9 +1,11 @@
 #pragma once
 #include <Core/Utils/CircularIndex.hpp>
+#include <stddef.h>
 
 namespace Ra {
 namespace Core {
 namespace Utils {
+class CircularIndex;
 
 /// DIMENSION
 inline size_t CircularIndex::size() const {

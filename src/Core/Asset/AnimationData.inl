@@ -1,11 +1,22 @@
 #pragma once
 #include <Core/Asset/AnimationData.hpp>
-
 #include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <ext/alloc_traits.h>
+#include <algorithm>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "Core/Asset/AnimationTime.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Math/Math.inl"
 
 namespace Ra {
 namespace Core {
 namespace Asset {
+struct HandleAnimation;
 
 inline void AnimationData::setName( const std::string& name ) {
     m_name = name;

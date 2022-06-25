@@ -1,6 +1,14 @@
 #include <Core/Geometry/Volume.hpp>
-
 #include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <ext/alloc_traits.h>
+#include <ostream>
+#include <string>
+
+#include "Core/Geometry/AbstractGeometry.hpp"
+#include "Core/Types.hpp"
+#include "Core/Utils/StdOptional.hpp"
 
 namespace Ra {
 namespace Core {

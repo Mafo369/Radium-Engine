@@ -1,7 +1,17 @@
-#include "Core/Geometry/StandardAttribNames.hpp"
 #include <Core/Asset/GeometryData.hpp>
-
 #include <Core/Utils/Log.hpp>
+#include <ostream>
+#include <stddef.h>
+
+#include "Core/Asset/AssetData.hpp"
+#include "Core/Asset/GeometryData.inl"
+#include "Core/Asset/MaterialData.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/StandardAttribNames.hpp"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Types.hpp"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/ContainerIntrospectionInterface.hpp"
 
 namespace Ra {
 namespace Core {

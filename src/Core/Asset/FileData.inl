@@ -7,10 +7,25 @@
 #include <Core/Asset/LightData.hpp>
 #include <Core/Asset/VolumeData.hpp>
 #include <Core/Utils/Log.hpp>
+#include <stdint.h>
+#include <algorithm>
+#include <memory>
+#include <ostream>
+#include <string>
+#include <vector>
+
+#include "Core/Asset/GeometryData.inl"
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Utils/Attribs.hpp"
 
 namespace Ra {
 namespace Core {
 namespace Asset {
+class Camera;
+class LightData;
+struct VolumeData;
 
 /// FILENAME
 inline std::string FileData::getFileName() const {

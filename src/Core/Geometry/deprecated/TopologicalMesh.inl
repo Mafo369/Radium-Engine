@@ -1,15 +1,58 @@
 #pragma once
 
 #include "TopologicalMesh.hpp"
-#include <Core/Geometry/StandardAttribNames.hpp>
 
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <OpenMesh/Core/System/config.h>
+#include <ext/alloc_traits.h>
+#include <stddef.h>
+#include <OpenMesh/Core/IO/StoreRestore.hh>
+#include <OpenMesh/Core/Mesh/CirculatorsT.hh>
+#include <OpenMesh/Core/Mesh/Handles.hh>
+#include <OpenMesh/Core/Mesh/PolyConnectivity.hh>
+#include <OpenMesh/Core/Mesh/PolyConnectivity_inline_impl.hh>
+#include <OpenMesh/Core/Mesh/PolyMeshT.hh>
+#include <OpenMesh/Core/Mesh/SmartHandles.hh>
+#include <OpenMesh/Core/Utils/Property.hh>
 #include <typeinfo>
 #include <unordered_map>
+#include <memory>
+#include <numeric>
+#include <ostream>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Geometry/IndexedGeometry.hpp"
+#include "Core/Geometry/IndexedGeometry.inl"
+#include "Core/Geometry/TriangleMesh.inl"
+#include "Core/Types.hpp"
+#include "Core/Utils/Attribs.hpp"
+#include "Core/Utils/Attribs.inl"
+#include "Core/Utils/Index.hpp"
+#include "Core/Utils/Index.inl"
+#include "Core/Utils/Log.hpp"
+
 
 namespace Ra {
 namespace Core {
 namespace Geometry {
 namespace deprecated {
+class TopologicalMesh;
+
 template <typename NonManifoldFaceCommand>
 inline TopologicalMesh::TopologicalMesh( const TriangleMesh& triMesh,
                                          NonManifoldFaceCommand command ) :

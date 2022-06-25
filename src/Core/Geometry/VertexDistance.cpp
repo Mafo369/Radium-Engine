@@ -1,4 +1,12 @@
 #include <Core/Geometry/VertexDistance.hpp>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <ext/alloc_traits.h>
+#include <limits>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

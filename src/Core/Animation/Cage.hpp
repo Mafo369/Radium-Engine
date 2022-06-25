@@ -4,6 +4,9 @@
 #include <Core/Containers/VectorArray.hpp>
 #include <Core/RaCore.hpp>
 
+#include "Core/CoreMacros.hpp"
+#include "Core/Types.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Animation {

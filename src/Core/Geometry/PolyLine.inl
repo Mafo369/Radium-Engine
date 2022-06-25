@@ -1,6 +1,16 @@
 #pragma once
 #include <Core/Geometry/PolyLine.hpp>
 #include <Core/Math/LinearAlgebra.hpp> // cotan, saturate (from Math.hpp)
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <vector>
+
+#include "Core/Containers/VectorArray.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Math/Math.inl"
+#include "Core/Types.hpp"
+
 
 namespace Ra {
 namespace Core {

@@ -1,7 +1,13 @@
 #include <Core/Animation/PoseOperation.hpp>
 #include <Core/Math/Interpolation.hpp>
+#include <Eigen/Core>
+#include <algorithm>
+#include <memory>
+#include <vector>
 
-#include <Eigen/Geometry>
+#include "Core/Animation/Pose.hpp"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

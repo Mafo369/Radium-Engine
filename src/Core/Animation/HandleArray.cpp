@@ -1,3 +1,5 @@
+#include "Core/Animation/Pose.hpp"
+#include "Core/Types.hpp"
 #include <Core/Animation/HandleArray.hpp>
 
 namespace Ra {

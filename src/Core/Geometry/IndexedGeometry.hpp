@@ -1,18 +1,27 @@
 #pragma once
 
 #include <Core/Containers/VectorArray.hpp>
-
 #include <Core/Geometry/TriangleMesh.hpp>
-
 #include <Core/Utils/ContainerIntrospectionInterface.hpp>
 #include <Core/Utils/ObjectWithSemantic.hpp>
 #include <Core/Utils/StdMapIterators.hpp>
-
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/BooleanRedux.h>
+#include <cstddef>
+#include <memory>
+#include <string>
 #include <unordered_map>
+#include <utility>
+#include <vector>
+
+#include "Core/RaCore.hpp"
+#include "Core/Types.hpp"
+#include "Core/Utils/Observable.hpp"
 
 namespace Ra {
 namespace Core {
 namespace Geometry {
+class AttribArrayGeometry;
 
 /// \brief Base class for index collections stored in MultiIndexedGeometry
 class RA_CORE_API GeometryIndexLayerBase : public Utils::ObservableVoid,

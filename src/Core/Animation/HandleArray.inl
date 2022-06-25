@@ -1,5 +1,10 @@
 #pragma once
 #include <Core/Animation/HandleArray.hpp>
+#include <string>
+#include <vector>
+
+#include "Core/Animation/Pose.hpp"
+#include "Core/CoreMacros.hpp"
 
 namespace Ra {
 namespace Core {

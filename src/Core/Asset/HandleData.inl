@@ -1,11 +1,23 @@
 #pragma once
 #include <Core/Asset/HandleData.hpp>
-
 #include <Core/Utils/Log.hpp>
+#include <ext/alloc_traits.h>
+#include <map>
+#include <memory>
+#include <ostream>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
+
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/CoreMacros.hpp"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {
 namespace Asset {
+struct HandleComponentData;
 
 inline void HandleData::setName( const std::string& name ) {
     m_name = name;

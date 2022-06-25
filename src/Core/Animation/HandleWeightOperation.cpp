@@ -1,7 +1,18 @@
 #include <Core/Animation/HandleWeightOperation.hpp>
-#include <Core/Math/LinearAlgebra.hpp> // Math::checkInvalidNumbers
 #include <Core/Utils/Log.hpp>
+#include <Eigen/Core>
+#include <algorithm>
+#include <memory>
+#include <new>
+#include <ostream>
+#include <string>
 #include <utility>
+
+#include "Core/Animation/HandleWeight.hpp"
+#include "Core/Containers/AlignedStdVector.hpp"
+#include "Core/Math/LinearAlgebra.inl"
+#include "Core/Math/Math.inl"
+#include "Core/Types.hpp"
 
 namespace Ra {
 namespace Core {

@@ -1,5 +1,12 @@
 #include <Core/Asset/FileData.hpp>
 
+#include "Core/Asset/AnimationData.hpp"
+#include "Core/Asset/Camera.hpp"
+#include "Core/Asset/GeometryData.hpp"
+#include "Core/Asset/HandleData.hpp"
+#include "Core/Asset/LightData.hpp"
+#include "Core/Asset/VolumeData.hpp"
+
 namespace Ra {
 namespace Core {
 namespace Asset {
