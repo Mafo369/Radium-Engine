@@ -1,8 +1,11 @@
-#include <Engine/Data/RawShaderMaterial.hpp>
-
+#include <Core/Utils/Index.hpp>
+#include <Engine/Data/Material.hpp>
 #include <Engine/Data/MaterialConverters.hpp>
+#include <Engine/Data/RawShaderMaterial.hpp>
 #include <Engine/Data/ShaderConfigFactory.hpp>
 #include <Engine/Rendering/RenderTechnique.hpp>
+#include <iosfwd>
+#include <optional>
 
 namespace Ra {
 namespace Engine {

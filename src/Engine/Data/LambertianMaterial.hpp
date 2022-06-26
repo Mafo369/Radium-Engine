@@ -1,6 +1,8 @@
 #pragma once
 
 #include <Engine/Data/SimpleMaterial.hpp>
+#include <Engine/RaEngine.hpp>
+#include <string>
 
 namespace Ra {
 namespace Engine {

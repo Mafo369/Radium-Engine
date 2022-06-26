@@ -2,13 +2,30 @@
 
 #include <Core/Animation/HandleWeight.hpp>
 #include <Core/Animation/KeyFramedValue.hpp>
+#include <Core/Animation/Pose.hpp>
 #include <Core/Animation/Skeleton.hpp>
 #include <Core/Asset/AnimationData.hpp>
 #include <Core/Asset/HandleData.hpp>
-
+#include <Core/CoreMacros.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Engine/RaEngine.hpp>
 #include <Engine/Scene/Component.hpp>
+#include <map>
+#include <memory>
+#include <stddef.h>
+#include <string>
+#include <utility>
+#include <vector>
 
 namespace Ra {
+namespace Core {
+namespace Asset {
+class AnimationData;
+class HandleData;
+} // namespace Asset
+} // namespace Core
+
 namespace Engine {
 namespace Data {
 class BlinnPhongMaterial;
@@ -23,6 +40,7 @@ namespace Scene {
 
 class SkeletonBoneRenderObject;
 class SkeletonBasedAnimationSystem;
+class Entity;
 
 /**
  * The SkeletonComponent is responsible for the management of skeleton-based

@@ -1,5 +1,14 @@
 #pragma once
 
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl45core/enum.h>
+#include <Core/CoreMacros.hpp>
+#include <Engine/Data/Material.hpp>
+#include <Engine/Data/Texture.hpp>
+#include <map>
+#include <string>
+#include <utility>
+
 namespace Ra {
 namespace Engine {
 namespace Data {

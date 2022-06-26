@@ -2,8 +2,16 @@
 
 #include "RenderTechnique.hpp"
 
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/Index.hpp>
+#include <utility>
+
 namespace Ra {
 namespace Engine {
+namespace Data {
+class ShaderConfiguration;
+}  // namespace Data
+
 namespace Rendering {
 
 /**

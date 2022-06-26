@@ -1,9 +1,19 @@
 #pragma once
 #include "ComponentMessenger.hpp"
+
 #include <Core/Utils/StdUtils.hpp>
+#include <Core/CoreMacros.hpp>
+#include <iosfwd>
+#include <string>
+#include <typeindex>
+#include <unordered_map>
+#include <utility>
+
 namespace Ra {
 namespace Engine {
 namespace Scene {
+class Component;
+class Entity;
 
 inline std::size_t ComponentMessenger::HashFunc::operator()( const Key& k ) const {
     return Core::Utils::hash( k );

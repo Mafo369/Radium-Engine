@@ -1,9 +1,18 @@
 #pragma once
 #include <Engine/Scene/Entity.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Core/CoreMacros.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/Observable.hpp>
+#include <mutex>
+#include <string>
+#include <vector>
 
 namespace Ra {
 namespace Engine {
 namespace Scene {
+class Entity;
 
 inline const std::string& Entity::getName() const {
     return m_name;

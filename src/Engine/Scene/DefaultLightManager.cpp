@@ -1,6 +1,8 @@
 #include <Engine/Scene/DefaultLightManager.hpp>
-
-#include <Engine/RadiumEngine.hpp>
+#include <Engine/Scene/Light.hpp>
+#include <iterator>
+#include <memory>
+#include <utility>
 
 namespace Ra {
 namespace Engine {

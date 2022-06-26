@@ -1,20 +1,43 @@
 #pragma once
 
-#include "Engine/Rendering/RenderObjectTypes.hpp"
 #include <Core/Asset/GeometryData.hpp>
 #include <Core/Asset/VolumeData.hpp>
 #include <Core/Geometry/TriangleMesh.hpp>
 #include <Core/Geometry/Volume.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/Index.hpp>
 #include <Engine/Data/Mesh.hpp>
+#include <Engine/RaEngine.hpp>
 #include <Engine/Scene/Component.hpp>
+#include <memory>
+#include <string>
+
+#include "Engine/Rendering/RenderObjectTypes.hpp"
 
 namespace Ra {
+namespace Core {
+namespace Asset {
+class GeometryData;
+class MaterialData;
+struct VolumeData;
+} // namespace Asset
+namespace Geometry {
+class AbstractVolume;
+class LineMesh;
+class PointCloud;
+class PolyMesh;
+class QuadMesh;
+class TriangleMesh;
+} // namespace Geometry
+} // namespace Core
+
 namespace Engine {
 namespace Data {
 class VolumeObject;
 } // namespace Data
 
 namespace Scene {
+class Entity;
 
 /// Abstract interface of a geometric compoennet in the Engine.
 class RA_ENGINE_API GeometryComponent : public Component

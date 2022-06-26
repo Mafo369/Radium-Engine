@@ -1,16 +1,14 @@
 #pragma once
 
-#include <Engine/RaEngine.hpp>
-
-#include <mutex>
-
 #include <Core/Utils/Observable.hpp>
-
+#include <Engine/RaEngine.hpp>
 #include <Engine/Scene/ItemEntry.hpp>
+#include <mutex>
 
 namespace Ra {
 namespace Engine {
 namespace Scene {
+struct ItemEntry;
 
 /** This class is used to inform the external world of events happening in the engine.
  * You can register a callback function which will be called any time the event happens.

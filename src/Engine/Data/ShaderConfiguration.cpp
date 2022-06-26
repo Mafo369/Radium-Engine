@@ -1,6 +1,8 @@
 #include <Core/Resources/Resources.hpp>
+#include <Core/Utils/StdOptional.hpp>
 #include <Engine/Data/ShaderConfiguration.hpp>
-#include <Engine/Data/ShaderProgramManager.hpp>
+#include <ostream>
+#include <stddef.h>
 
 /**
  * Plain will be the default shader program

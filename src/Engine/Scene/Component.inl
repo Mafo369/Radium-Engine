@@ -1,9 +1,12 @@
 #pragma once
 #include <Engine/Scene/Component.hpp>
+#include <string>
 
 namespace Ra {
 namespace Engine {
 namespace Scene {
+class Entity;
+class System;
 
 inline void Component::setEntity( Entity* entity ) {
     m_entity = entity;

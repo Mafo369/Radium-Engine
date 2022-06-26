@@ -1,24 +1,62 @@
+#include <Engine/Data/EnvironmentTexture.hpp>
+//#define STB_IMAGE_IMPLEMENTATION
+#include <Core/Asset/Camera.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/Utils/Attribs.hpp>
+#include <Core/Utils/Color.hpp>
+#include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CommaInitializer.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/GeneralProduct.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Product.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <Engine/Data/Mesh.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
+#include <Engine/Data/ShaderProgram.hpp>
 #include <algorithm>
 #include <cmath>
-#include <filesystem>
-#include <iostream>
-
 #include <cstring>
-
-#include <Engine/Data/EnvironmentTexture.hpp>
-
-//#define STB_IMAGE_IMPLEMENTATION
+#include <glbinding/Boolean8.h>
+#include <glbinding/gl/boolean.h>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/extension.h>
+#include <glbinding/gl/functions.h>
+#include <globjects/Program.h>
+#include <globjects/base/Instantiator.h>
+#include <iostream>
+#include <map>
+#include <optional>
 #include <stb/stb_image.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <utility>
+
 //#undef STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb/stb_image_write.h>
+
 #undef STB_IMAGE_WRITE_IMPLEMENTATION
 
 #include <Core/Asset/Camera.hpp>
 #include <Core/Geometry/MeshPrimitives.hpp>
 #include <Core/Math/Math.hpp>
-#include <Core/Resources/Resources.hpp>
-
 #include <Engine/Data/Mesh.hpp>
 #include <Engine/Data/ShaderProgram.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
@@ -26,7 +64,6 @@
 #include <Engine/Data/ViewingParameters.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Scene/CameraManager.hpp>
-
 #include <tinyEXR/tinyexr.h>
 
 namespace Ra {

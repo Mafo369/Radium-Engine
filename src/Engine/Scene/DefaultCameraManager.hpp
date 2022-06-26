@@ -1,15 +1,18 @@
 #pragma once
 
 #include <Core/Asset/Camera.hpp>
+#include <Engine/RaEngine.hpp>
 #include <Engine/Scene/CameraComponent.hpp>
 #include <Engine/Scene/CameraManager.hpp>
 #include <Engine/Scene/CameraStorage.hpp>
 #include <memory>
+#include <stddef.h>
 #include <vector>
 
 namespace Ra {
 namespace Engine {
 namespace Scene {
+class CameraComponent;
 
 /**
  * Associated class.

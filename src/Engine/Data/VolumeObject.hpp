@@ -1,9 +1,14 @@
 #pragma once
 
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Types.hpp>
 #include <Engine/Data/DisplayableObject.hpp>
 #include <Engine/Data/Mesh.hpp>
 #include <Engine/Data/Texture.hpp>
 #include <Engine/RaEngine.hpp>
+#include <memory>
+#include <stddef.h>
+#include <string>
 
 namespace Ra {
 namespace Core {
@@ -13,6 +18,8 @@ class AbstractVolume;
 } // namespace Core
 namespace Engine {
 namespace Data {
+class ShaderProgram;
+
 /**
  * A class representing an openGL volume
  *

@@ -1,26 +1,36 @@
 #pragma once
 
-#include <Engine/RaEngine.hpp>
-
-#include <Engine/Data/DisplayableObject.hpp>
-
 #include <Core/Asset/GeometryData.hpp>
+#include <Core/Containers/AlignedStdVector.hpp>
 #include <Core/Containers/VectorArray.hpp>
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
 #include <Core/Geometry/MeshPrimitives.hpp>
 #include <Core/Geometry/StandardAttribNames.hpp>
 #include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/RaCore.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Color.hpp>
 #include <Core/Utils/Log.hpp>
-
+#include <Core/Utils/ObjectWithSemantic.hpp>
+#include <Engine/Data/DisplayableObject.hpp>
+#include <Engine/RaEngine.hpp>
+#include <OpenMesh/Core/System/config.h>
+#include <algorithm>
+#include <array>
 #include <globjects/Buffer.h>
 #include <globjects/VertexArray.h>
-
-#include <array>
-#include <map>
-#include <vector>
-
-#include <Core/Utils/ObjectWithSemantic.hpp>
 #include <iterator>
+#include <map>
+#include <memory>
+#include <ostream>
+#include <set>
+#include <stddef.h>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
 
 namespace Ra {
 namespace Engine {

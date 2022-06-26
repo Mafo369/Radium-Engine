@@ -1,13 +1,14 @@
+#include <Core/Containers/MakeShared.hpp>
+#include <Core/Utils/Log.hpp>
 #include <Engine/Data/ShaderConfiguration.hpp>
 #include <Engine/Data/ShaderProgram.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
-
-#include <Core/Containers/MakeShared.hpp>
-#include <Core/Utils/Log.hpp>
-
 #include <globjects/NamedString.h>
-#include <globjects/Shader.h>
+#include <globjects/Program.h>
 #include <globjects/base/File.h>
+#include <optional>
+#include <ostream>
+#include <type_traits>
 
 namespace Ra {
 namespace Engine {

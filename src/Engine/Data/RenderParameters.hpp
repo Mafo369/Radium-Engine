@@ -1,14 +1,23 @@
 #pragma once
 
-#include <Engine/RaEngine.hpp>
-
-#include <set>
-#include <vector>
-
 #include <Core/Containers/AlignedAllocator.hpp>
+#include <Core/CoreMacros.hpp>
 #include <Core/Types.hpp>
 #include <Core/Utils/Color.hpp>
 #include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/util/ConfigureVectorization.h>
+#include <Engine/Data/ShaderProgram.hpp>
+#include <Engine/RaEngine.hpp>
+#include <functional>
+#include <iterator>
+#include <list>
+#include <map>
+#include <set>
+#include <string>
+#include <utility>
+#include <vector>
 
 namespace Ra {
 namespace Engine {

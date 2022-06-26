@@ -1,15 +1,17 @@
 #pragma once
 
+#include <Core/CoreMacros.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/IndexedObject.hpp>
+#include <Core/Utils/Observable.hpp>
+#include <Eigen/src/Core/util/Memory.h>
 #include <Engine/RaEngine.hpp>
 
+#include <memory>
 #include <mutex>
 #include <string>
 #include <thread>
 #include <vector>
-
-#include <Core/Types.hpp>
-#include <Core/Utils/IndexedObject.hpp>
-#include <Core/Utils/Observable.hpp>
 
 namespace Ra {
 namespace Engine {

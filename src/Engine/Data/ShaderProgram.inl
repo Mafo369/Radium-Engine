@@ -1,9 +1,13 @@
 #pragma once
 #include <Core/CoreMacros.hpp>
 #include <Engine/Data/ShaderProgram.hpp>
-
 #include <globjects/Program.h>
+#include <Core/Types.hpp>
+#include <Engine/RaEngine.hpp>
+#include <globjects/globjects.h>
 #include <type_traits>
+#include <memory>
+#include <vector>
 
 namespace Ra {
 namespace Engine {

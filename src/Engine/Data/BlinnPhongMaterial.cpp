@@ -1,13 +1,20 @@
-#include <Engine/Data/BlinnPhongMaterial.hpp>
-
 #include <Core/Asset/BlinnPhongMaterialData.hpp>
+#include <Core/Asset/MaterialData.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Engine/Data/BlinnPhongMaterial.hpp>
 #include <Engine/Data/MaterialConverters.hpp>
+#include <Engine/Data/RenderParameters.hpp>
 #include <Engine/Data/ShaderConfigFactory.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
 #include <Engine/Data/Texture.hpp>
 #include <Engine/Data/TextureManager.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/RenderTechnique.hpp>
+#include <algorithm>
+#include <optional>
+#include <utility>
 
 namespace Ra {
 namespace Engine {

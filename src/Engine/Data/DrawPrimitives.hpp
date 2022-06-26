@@ -1,15 +1,21 @@
 #pragma once
 
-#include <Engine/RaEngine.hpp>
-
+#include <Core/Containers/VectorArray.hpp>
+#include <Core/CoreMacros.hpp>
 #include <Core/Geometry/Obb.hpp>
 #include <Core/Geometry/Spline.hpp>
 #include <Core/Types.hpp>
 #include <Core/Utils/Color.hpp>
-
+#include <Engine/RaEngine.hpp>
 #include <memory>
 
 namespace Ra {
+namespace Core {
+namespace Geometry {
+class Obb;
+} // namespace Geometry
+} // namespace Core
+
 namespace Engine {
 namespace Rendering {
 class RenderObject;

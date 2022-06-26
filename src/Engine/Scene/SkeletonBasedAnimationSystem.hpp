@@ -1,11 +1,23 @@
 #pragma once
 
+#include <Core/CoreMacros.hpp>
+#include <Engine/RaEngine.hpp>
 #include <Engine/Scene/ItemEntry.hpp>
 #include <Engine/Scene/System.hpp>
 
 namespace Ra {
+namespace Core {
+class TaskQueue;
+namespace Asset {
+class FileData;
+} // namespace Asset
+} // namespace Core
+
 namespace Engine {
+struct FrameInfo;
+
 namespace Scene {
+class Entity;
 
 /**
  * The SkeletonBasedAnimationSystem manages both SkeletonComponents and SkinningComponents.

@@ -1,6 +1,11 @@
 #pragma once
 #include "PointLight.hpp"
 
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Core/CoreMacros.hpp>
+#include <Engine/Scene/Light.hpp>
+
 namespace Ra {
 namespace Engine {
 namespace Scene {

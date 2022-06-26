@@ -1,18 +1,23 @@
-#include <Engine/Scene/GeometrySystem.hpp>
-
 #include <Core/Asset/FileData.hpp>
 #include <Core/Asset/GeometryData.hpp>
-#include <Core/Tasks/Task.hpp>
-#include <Core/Tasks/TaskQueue.hpp>
-
-#include <Engine/RadiumEngine.hpp>
-#include <Engine/Scene/ComponentMessenger.hpp>
+#include <Core/CoreMacros.hpp>
 #include <Engine/Scene/Entity.hpp>
 #include <Engine/Scene/GeometryComponent.hpp>
+#include <Engine/Scene/GeometrySystem.hpp>
+#include <OpenMesh/Core/System/config.h>
+#include <string>
+#include <vector>
 
 namespace Ra {
+namespace Core {
+class TaskQueue;
+} // namespace Core
+
 namespace Engine {
+struct FrameInfo;
+
 namespace Scene {
+class Component;
 
 GeometrySystem::GeometrySystem() : System() {}
 

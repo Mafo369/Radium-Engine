@@ -1,15 +1,31 @@
-#include <Engine/Data/VolumeObject.hpp>
-
+#include <Core/Containers/VectorArray.hpp>
+#include <Core/CoreMacros.hpp>
 #include <Core/Geometry/MeshPrimitives.hpp>
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
 #include <Core/Geometry/Volume.hpp>
 #include <Core/Types.hpp>
-#include <Core/Utils/Log.hpp>
-#include <Engine/Data/ShaderProgram.hpp>
+#include <Core/Utils/Attribs.hpp>
+#include <Eigen/src/Core/CommaInitializer.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Map.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Engine/Data/Mesh.hpp>
+#include <Engine/Data/VolumeObject.hpp>
 #include <Engine/OpenGL.hpp>
+#include <glbinding/Boolean8.h>
+#include <glbinding/gl/boolean.h>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/functions.h>
+#include <glbinding/gl45core/enum.h>
+#include <glbinding/gl45core/functions.h>
 
 namespace Ra {
 namespace Engine {
 namespace Data {
+class ShaderProgram;
+
 VolumeObject::VolumeObject( const std::string& name ) :
     Displayable( name ), m_tex( {} ), m_mesh( name + "_internal" ) {}
 

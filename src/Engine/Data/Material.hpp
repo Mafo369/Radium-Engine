@@ -1,15 +1,14 @@
 #pragma once
 
 #include <Engine/RaEngine.hpp>
-
-#include <map>
-#include <string>
-
 // This include brings only the macro EIGEN_MAKE_ALIGNED_OPERATOR_NEW in the file scope.
 // Need to be separated to reduce compilation time
 #include <Core/Types.hpp>
-
+#include <Eigen/src/Core/util/Memory.h>
 #include <Engine/Data/RenderParameters.hpp>
+#include <list>
+#include <map>
+#include <string>
 
 namespace Ra {
 namespace Engine {

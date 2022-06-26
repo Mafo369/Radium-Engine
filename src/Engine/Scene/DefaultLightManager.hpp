@@ -1,9 +1,12 @@
 #pragma once
 
+#include <Engine/RaEngine.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Scene/Light.hpp>
 #include <Engine/Scene/LightManager.hpp>
+#include <Engine/Scene/LightStorage.hpp>
 
+#include <map>
 #include <memory>
 #include <vector>
 

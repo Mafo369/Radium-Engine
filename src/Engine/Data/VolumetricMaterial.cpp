@@ -1,11 +1,14 @@
-#include <Engine/Data/VolumetricMaterial.hpp>
-
+#include <Core/Utils/Index.hpp>
+#include <Engine/Data/RenderParameters.hpp>
 #include <Engine/Data/ShaderConfigFactory.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
 #include <Engine/Data/Texture.hpp>
-#include <Engine/Data/TextureManager.hpp>
+#include <Engine/Data/VolumetricMaterial.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/RenderTechnique.hpp>
+#include <math.h>
+#include <optional>
 
 namespace Ra {
 namespace Engine {

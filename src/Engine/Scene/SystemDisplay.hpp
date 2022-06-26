@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Core/Utils/Index.hpp>
 #include <Engine/RaEngine.hpp>
 
 /// This file's main purpose is to declare a set of macros to allow drawing
@@ -10,9 +11,9 @@
 
 #include <Core/Utils/Color.hpp>
 #include <Core/Utils/Singleton.hpp>
-
 #include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/Entity.hpp>
+#include <memory>
 
 #ifndef RA_DISABLE_DEBUG_DISPLAY
 #    include <Engine/Data/DrawPrimitives.hpp>
@@ -20,6 +21,10 @@
 
 namespace Ra {
 namespace Engine {
+namespace Rendering {
+class RenderObject;
+} // namespace Rendering
+
 namespace Scene {
 
 #ifndef RA_DISABLE_DEBUG_DISPLAY

@@ -1,9 +1,20 @@
 #pragma once
 #include <Engine/Data/RawShaderMaterial.hpp>
+#include <Engine/Data/RenderParameters.hpp>
+#include <memory>
 
 namespace Ra {
+namespace Core {
+namespace Asset {
+class MaterialData;
+class RawShaderMaterialData;
+}  // namespace Asset
+}  // namespace Core
+
 namespace Engine {
 namespace Data {
+class Material;
+
 inline Material*
 RawShaderMaterialConverter::operator()( const Ra::Core::Asset::MaterialData* toconvert ) {
     auto mat = static_cast<const Core::Asset::RawShaderMaterialData*>( toconvert );

@@ -1,13 +1,27 @@
 #pragma once
 
 #include <Core/Asset/Camera.hpp>
+#include <Core/CoreMacros.hpp>
 #include <Core/Math/Math.hpp>
 #include <Core/Types.hpp>
+#include <Eigen/src/Core/util/Memory.h>
 #include <Engine/RaEngine.hpp>
 #include <Engine/Scene/Component.hpp>
+#include <memory>
+#include <string>
 
 namespace Ra {
+namespace Core {
+namespace Asset {
+class Camera;
+} // namespace Asset
+} // namespace Core
+
 namespace Engine {
+namespace Rendering {
+class RenderObject;
+} // namespace Rendering
+
 namespace Scene {
 
 class Entity;

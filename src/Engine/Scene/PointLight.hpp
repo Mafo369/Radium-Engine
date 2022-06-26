@@ -1,13 +1,21 @@
 #pragma once
 
+#include <Core/CoreMacros.hpp>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/util/Memory.h>
 #include <Engine/RaEngine.hpp>
 #include <Engine/Scene/Light.hpp>
+#include <string>
 
 namespace Ra {
 namespace Engine {
+namespace Data {
+class RenderParameters;
+} // namespace Data
 
 namespace Scene {
 class Entity;
+
 /** Point light for rendering
  *
  */

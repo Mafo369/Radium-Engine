@@ -1,7 +1,13 @@
+#include <Core/CoreMacros.hpp>
 #include <Engine/Rendering/RenderObjectManager.hpp>
 #include <Engine/Scene/SystemDisplay.hpp>
+
 namespace Ra {
 namespace Engine {
+namespace Rendering {
+class RenderObject;
+} // namespace Rendering
+
 namespace Scene {
 
 SystemEntity::SystemEntity() : Entity( "System Display Entity" ) {

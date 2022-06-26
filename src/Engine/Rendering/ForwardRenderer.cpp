@@ -1,35 +1,70 @@
-#include "Engine/Data/ShaderConfigFactory.hpp"
-#include "Engine/Data/ShaderConfiguration.hpp"
-#include <Engine/Rendering/ForwardRenderer.hpp>
-
 #include <Core/Containers/MakeShared.hpp>
-#include <Core/Geometry/TopologicalMesh.hpp>
+#include <Core/Containers/VectorArray.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Color.hpp>
+#include <Core/Utils/Index.hpp>
 #include <Core/Utils/Log.hpp>
-
+#include <Core/Utils/StdOptional.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/BooleanRedux.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/GeneralProduct.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Product.h>
+#include <Engine/Data/DisplayableObject.hpp>
 #include <Engine/Data/LambertianMaterial.hpp>
 #include <Engine/Data/Material.hpp>
+#include <Engine/Data/Mesh.hpp>
 #include <Engine/Data/RenderParameters.hpp>
+#include <Engine/Data/ShaderProgram.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
 #include <Engine/Data/Texture.hpp>
 #include <Engine/Data/ViewingParameters.hpp>
 #include <Engine/OpenGL.hpp>
+#include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/DebugRender.hpp>
+#include <Engine/Rendering/ForwardRenderer.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
+#include <Engine/Rendering/RenderTechnique.hpp>
+#include <Engine/Rendering/Renderer.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/DefaultLightManager.hpp>
-#include <Engine/Scene/Light.hpp>
-#include <globjects/Framebuffer.h>
-
-/* Test Point cloud parameter provider */
-#include <Core/RaCore.hpp>
-#include <Engine/Data/ShaderProgram.hpp>
 #include <Engine/Scene/GeometryComponent.hpp>
-
-#include <Engine/Scene/SystemDisplay.hpp>
-
+#include <Engine/Scene/Light.hpp>
+#include <Engine/Scene/LightManager.hpp>
+#include <OpenMesh/Core/System/config.h>
+#include <algorithm>
+#include <functional>
+#include <glbinding-aux/types_to_string.h>
+#include <glbinding/Boolean8.h>
+#include <glbinding/SharedBitfield.h>
+#include <glbinding/gl/bitfield.h>
+#include <glbinding/gl/boolean.h>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/functions.h>
+#include <glbinding/gl45core/bitfield.h>
+#include <glbinding/gl45core/boolean.h>
+#include <glbinding/gl45core/enum.h>
+#include <glbinding/gl45core/functions.h>
+#include <globjects/Framebuffer.h>
+#include <globjects/Program.h>
+#include <globjects/base/Instantiator.h>
+#include <iostream>
 #include <map>
+#include <utility>
 
-#include <globjects/Texture.h>
+#include "Engine/Data/ShaderConfigFactory.hpp"
+#include "Engine/Data/ShaderConfiguration.hpp"
 
 namespace Ra {
 using namespace Core;

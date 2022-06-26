@@ -1,15 +1,16 @@
-#include <Engine/Scene/Component.hpp>
-
-#include <Core/Math/LinearAlgebra.hpp>
-#include <Core/Utils/Log.hpp>
-#include <Engine/Data/Mesh.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Utils/Index.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
 #include <Engine/Rendering/RenderObjectManager.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
 #include <Engine/Scene/Entity.hpp>
+#include <Engine/Scene/ItemEntry.hpp>
 #include <Engine/Scene/SignalManager.hpp>
 #include <Engine/Scene/System.hpp>
+#include <algorithm>
+#include <memory>
 
 namespace Ra {
 namespace Engine {

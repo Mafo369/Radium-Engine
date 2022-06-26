@@ -2,6 +2,8 @@
 
 #include "Light.hpp"
 
+#include <Core/Utils/Color.hpp>
+
 namespace Ra {
 namespace Engine {
 namespace Scene {

@@ -1,7 +1,5 @@
-#include <Engine/Scene/Light.hpp>
-
 #include <Engine/Data/RenderParameters.hpp>
-#include <Engine/RadiumEngine.hpp>
+#include <Engine/Scene/Light.hpp>
 
 namespace Ra {
 namespace Engine {

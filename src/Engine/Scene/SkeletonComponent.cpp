@@ -1,24 +1,75 @@
-#include <Engine/Scene/SkeletonComponent.hpp>
-
-#include <fstream>
-#include <iostream>
-#include <queue>
-
+#include <Core/Animation/HandleArray.hpp>
+#include <Core/Animation/HandleWeight.hpp>
 #include <Core/Animation/KeyFramedValueInterpolators.hpp>
 #include <Core/Animation/Pose.hpp>
+#include <Core/Asset/AnimationData.hpp>
+#include <Core/Asset/HandleData.hpp>
 #include <Core/Asset/HandleToSkeleton.hpp>
+#include <Core/Containers/AdjacencyList.hpp>
 #include <Core/Containers/AlignedStdVector.hpp>
-#include <Core/Containers/MakeShared.hpp>
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
 #include <Core/Geometry/TriangleMesh.hpp>
-#include <Core/Math/Math.hpp> // areApproxEqual
-
+#include <Core/Math/Math.hpp>
+#include <Core/Utils/Attribs.hpp>
+#include <Core/Utils/Color.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/Log.hpp>
+#include <Core/Utils/StdOptional.hpp>
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CommaInitializer.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Diagonal.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/GeneralProduct.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/NoAlias.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/SelfCwiseBinaryOp.h>
+#include <Eigen/src/Core/Transpose.h>
+#include <Eigen/src/Core/TriangularMatrix.h>
+#include <Eigen/src/Core/Visitor.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/IntegralConstant.h>
+#include <Eigen/src/Core/util/Memory.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <Eigen/src/Householder/BlockHouseholder.h>
+#include <Eigen/src/Householder/Householder.h>
+#include <Eigen/src/Jacobi/Jacobi.h>
 #include <Engine/Data/BlinnPhongMaterial.hpp>
 #include <Engine/Data/Mesh.hpp>
 #include <Engine/Data/ShaderConfigFactory.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
-#include <Engine/Rendering/RenderObjectManager.hpp>
+#include <Engine/Rendering/RenderObjectTypes.hpp>
 #include <Engine/Rendering/RenderTechnique.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
+#include <Engine/Scene/SkeletonComponent.hpp>
+#include <OpenMesh/Core/System/config.h>
+#include <algorithm>
+#include <deque>
+#include <ext/alloc_traits.h>
+#include <functional>
+#include <iostream>
+#include <limits>
+#include <math.h>
+
+namespace Ra {
+namespace Engine {
+namespace Scene {
+class Entity;
+} // namespace Scene
+} // namespace Engine
+} // namespace Ra
 
 using KeyFramedValue = Ra::Core::Animation::KeyFramedValue<Ra::Core::Transform>;
 

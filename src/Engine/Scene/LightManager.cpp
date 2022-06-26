@@ -1,20 +1,30 @@
 #include <Core/Asset/FileData.hpp>
-#include <Core/Tasks/Task.hpp>
-#include <Core/Tasks/TaskQueue.hpp>
-#include <Engine/FrameInfo.hpp>
-#include <Engine/RadiumEngine.hpp>
-#include <Engine/Scene/ComponentMessenger.hpp>
+#include <Core/Asset/LightData.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Utils/Log.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/DirLight.hpp>
-#include <Engine/Scene/Entity.hpp>
+#include <Engine/Scene/Light.hpp>
 #include <Engine/Scene/LightManager.hpp>
 #include <Engine/Scene/PointLight.hpp>
 #include <Engine/Scene/SpotLight.hpp>
 #include <Engine/Scene/SystemDisplay.hpp>
+#include <ostream>
+#include <string>
+#include <utility>
+#include <vector>
 
 namespace Ra {
+namespace Core {
+class TaskQueue;
+} // namespace Core
 
 namespace Engine {
+struct FrameInfo;
+
 namespace Scene {
+class Component;
+class Entity;
 
 using namespace Core::Utils; // log
 using namespace Core::Asset;

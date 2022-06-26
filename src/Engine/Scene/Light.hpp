@@ -1,8 +1,12 @@
 #pragma once
 
+#include <Core/CoreMacros.hpp>
 #include <Core/Utils/Color.hpp>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/util/Memory.h>
 #include <Engine/RaEngine.hpp>
 #include <Engine/Scene/Component.hpp>
+#include <string>
 
 namespace Ra {
 namespace Engine {

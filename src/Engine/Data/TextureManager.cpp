@@ -1,9 +1,12 @@
+#include <Core/Utils/Color.hpp>
+#include <Core/Utils/Log.hpp>
 #include <Engine/Data/Texture.hpp>
 #include <Engine/Data/TextureManager.hpp>
-
-#include <Core/Utils/Log.hpp>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl45core/enum.h>
 
 #define STB_IMAGE_IMPLEMENTATION
+#include <ostream>
 #include <stb/stb_image.h>
 
 namespace Ra {

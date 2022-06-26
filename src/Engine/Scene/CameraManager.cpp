@@ -1,20 +1,27 @@
-#include <Engine/Scene/CameraManager.hpp>
-
 #include <Core/Asset/Camera.hpp>
 #include <Core/Asset/FileData.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Math/Math.hpp>
 #include <Core/Tasks/Task.hpp>
 #include <Core/Tasks/TaskQueue.hpp>
-#include <Engine/FrameInfo.hpp>
-#include <Engine/RadiumEngine.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/Log.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
 #include <Engine/Scene/CameraComponent.hpp>
-#include <Engine/Scene/ComponentMessenger.hpp>
+#include <Engine/Scene/CameraManager.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/Entity.hpp>
-#include <Engine/Scene/SystemDisplay.hpp>
+#include <ostream>
+#include <string>
+#include <utility>
+#include <vector>
 
 namespace Ra {
 namespace Engine {
+struct FrameInfo;
+
 namespace Scene {
+class Component;
 
 using namespace Core::Utils; // log
 using namespace Core::Asset;

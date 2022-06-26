@@ -1,9 +1,9 @@
-#include <Engine/Scene/Entity.hpp>
-
-#include <Core/Math/LinearAlgebra.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Scene/Component.hpp>
+#include <Engine/Scene/Entity.hpp>
+#include <Engine/Scene/ItemEntry.hpp>
 #include <Engine/Scene/SignalManager.hpp>
+#include <algorithm>
 
 namespace Ra {
 namespace Engine {

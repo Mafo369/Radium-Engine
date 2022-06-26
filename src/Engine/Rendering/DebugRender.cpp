@@ -1,21 +1,39 @@
-#include <Engine/Rendering/DebugRender.hpp>
-
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/Utils/Attribs.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
 #include <Engine/Data/DrawPrimitives.hpp>
 #include <Engine/Data/Mesh.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
 #include <Engine/Data/ShaderProgram.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
 #include <Engine/OpenGL.hpp>
 #include <Engine/RadiumEngine.hpp>
-
-#include <Core/Containers/MakeShared.hpp>
-#include <Core/Geometry/MeshPrimitives.hpp>
-#include <Core/Utils/Log.hpp>
-
+#include <Engine/Rendering/DebugRender.hpp>
+#include <OpenMesh/Core/System/config.h>
+#include <algorithm>
+#include <ext/alloc_traits.h>
+#include <glbinding/gl/boolean.h>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/functions.h>
+#include <glbinding/gl/types.h>
+#include <glbinding/gl45core/boolean.h>
+#include <glbinding/gl45core/enum.h>
+#include <glbinding/gl45core/functions.h>
 #include <globjects/Program.h>
-#include <globjects/Shader.h>
-#include <globjects/base/StaticStringSource.h>
-
-#include <fstream>
+#include <globjects/base/Instantiator.h>
+#include <optional>
+#include <string>
 
 namespace Ra {
 namespace Engine {

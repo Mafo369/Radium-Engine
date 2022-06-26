@@ -1,6 +1,8 @@
+#include <Engine/Data/RenderParameters.hpp>
 #include <Engine/Data/SimpleMaterial.hpp>
 #include <Engine/Data/TextureManager.hpp>
 #include <Engine/RadiumEngine.hpp>
+#include <utility>
 
 namespace Ra {
 namespace Engine {

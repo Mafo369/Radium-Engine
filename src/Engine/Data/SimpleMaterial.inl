@@ -1,5 +1,10 @@
 #pragma once
 
+#include <Engine/Data/Material.hpp>
+#include <Engine/Data/Texture.hpp>
+#include <map>
+#include <utility>
+
 namespace Ra {
 namespace Engine {
 namespace Data {

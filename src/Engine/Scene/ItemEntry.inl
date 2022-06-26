@@ -1,9 +1,13 @@
 #pragma once
 #include "ItemEntry.hpp"
 
+#include <Core/CoreMacros.hpp>
+#include <Core/Utils/Index.hpp>
+
 namespace Ra {
 namespace Engine {
 namespace Scene {
+struct ItemEntry;
 
 bool ItemEntry::isEntityNode() const {
     ON_DEBUG( checkConsistency() );

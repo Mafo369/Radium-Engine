@@ -1,14 +1,14 @@
 #pragma once
 
+#include <Core/Utils/Singleton.hpp>
+#include <Core/Utils/StdOptional.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
 #include <Engine/RaEngine.hpp>
-
 #include <map>
 #include <memory>
 #include <string>
+#include <utility>
 #include <vector>
-
-#include <Core/Utils/Singleton.hpp>
-#include <Core/Utils/StdOptional.hpp>
 
 namespace globjects {
 class File;

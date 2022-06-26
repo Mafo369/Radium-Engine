@@ -1,6 +1,14 @@
 #pragma once
 #include <Engine/Data/RenderParameters.hpp>
 #include <Engine/Data/ShaderProgram.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Core/Utils/Color.hpp>
+#include <Engine/Data/ShaderProgram.hpp>
+#include <globjects/Program.h>
+#include <globjects/base/Instantiator.h>
+#include <string>
+#include <utility>
 
 namespace Ra {
 namespace Engine {

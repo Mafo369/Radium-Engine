@@ -1,10 +1,19 @@
 #pragma once
 
+#include <Core/CoreMacros.hpp>
 #include <Engine/RaEngine.hpp>
 #include <Engine/Scene/Light.hpp>
 
+#include <Eigen/Core>
+
+#include <string>
+
 namespace Ra {
 namespace Engine {
+namespace Data {
+class RenderParameters;
+} // namespace Data
+
 namespace Scene {
 
 class Entity;

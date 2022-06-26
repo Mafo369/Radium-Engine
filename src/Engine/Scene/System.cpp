@@ -1,7 +1,6 @@
-#include <Engine/Scene/System.hpp>
-
 #include <Engine/Scene/Component.hpp>
-#include <Engine/Scene/Entity.hpp>
+#include <Engine/Scene/System.hpp>
+#include <algorithm>
 
 namespace Ra {
 namespace Engine {

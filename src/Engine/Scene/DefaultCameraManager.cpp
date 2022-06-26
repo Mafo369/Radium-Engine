@@ -1,9 +1,8 @@
-#include <Engine/Scene/DefaultCameraManager.hpp>
-
-#include <Engine/RadiumEngine.hpp>
 #include <Engine/Scene/CameraComponent.hpp>
-
+#include <Engine/Scene/Component.hpp>
+#include <Engine/Scene/DefaultCameraManager.hpp>
 #include <algorithm>
+#include <memory>
 
 namespace Ra {
 namespace Engine {

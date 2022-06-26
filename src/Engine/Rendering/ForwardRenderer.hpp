@@ -1,6 +1,14 @@
 #pragma once
 
+#include <Core/Types.hpp>
+#include <Engine/RaEngine.hpp>
 #include <Engine/Rendering/Renderer.hpp>
+#include <array>
+#include <map>
+#include <memory>
+#include <stddef.h>
+#include <string>
+#include <vector>
 
 namespace globjects {
 class Framebuffer;
@@ -10,8 +18,11 @@ namespace Ra {
 namespace Engine {
 namespace Data {
 class Texture;
-}
+class Displayable;
+struct ViewingParameters;
+} // namespace Data
 namespace Rendering {
+class RenderObject;
 
 /** Default renderer for the Radium Engine
  * This classe implements aforward rendering algorithm with Z-prepass, multipass light accumulation

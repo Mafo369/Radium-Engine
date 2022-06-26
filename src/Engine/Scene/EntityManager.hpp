@@ -1,14 +1,13 @@
 #pragma once
 
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/IndexMap.hpp>
+#include <Core/Utils/Singleton.hpp>
 #include <Engine/RaEngine.hpp>
-
 #include <map>
 #include <memory>
 #include <string>
 #include <vector>
-
-#include <Core/Utils/IndexMap.hpp>
-#include <Core/Utils/Singleton.hpp>
 
 namespace Ra {
 namespace Engine {

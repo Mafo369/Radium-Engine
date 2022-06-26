@@ -1,23 +1,39 @@
-#include <Engine/Rendering/RenderObject.hpp>
-
-#include <Engine/RadiumEngine.hpp>
-
 #include <Engine/Data/DisplayableObject.hpp>
 #include <Engine/Data/Material.hpp>
 #include <Engine/Data/RenderParameters.hpp>
-#include <Engine/OpenGL.hpp>
+#include <Engine/RadiumEngine.hpp>
+#include <Engine/Rendering/RenderObject.hpp>
 #include <Engine/Rendering/RenderObjectManager.hpp>
 #include <Engine/Scene/Component.hpp>
-
 // STRANGE : only needed to access to the entity and its transform for components --> refactor
 // component to give this directly ?
-#include <Engine/Scene/Entity.hpp>
-
 #include <Core/Containers/MakeShared.hpp>
-#include <Engine/Data/BlinnPhongMaterial.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Utils/Observable.hpp>
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/GeneralProduct.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Inverse.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Transpose.h>
+#include <Eigen/src/Geometry/AlignedBox.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <Eigen/src/LU/Determinant.h>
+#include <Eigen/src/LU/InverseImpl.h>
 #include <Engine/Data/ShaderProgram.hpp>
-#include <Engine/Data/SimpleMaterial.hpp>
 #include <Engine/Data/ViewingParameters.hpp>
+#include <Engine/Scene/Component.hpp>
+#include <Engine/Scene/Entity.hpp>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/functions.h>
+#include <glbinding/gl45core/enum.h>
+#include <glbinding/gl45core/functions.h>
+#include <globjects/Program.h>
+#include <globjects/base/Instantiator.h>
+#include <utility>
 
 namespace Ra {
 namespace Engine {

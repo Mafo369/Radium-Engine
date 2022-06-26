@@ -1,31 +1,59 @@
-#include <Engine/Rendering/Renderer.hpp>
-
-#include <Core/Asset/FileData.hpp>
 #include <Core/Geometry/MeshPrimitives.hpp>
 #include <Core/Utils/Log.hpp>
-#include <Engine/Data/Material.hpp>
 #include <Engine/Data/Mesh.hpp>
 #include <Engine/Data/ShaderConfigFactory.hpp>
 #include <Engine/Data/ShaderProgram.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
 #include <Engine/Data/Texture.hpp>
-#include <Engine/Data/TextureManager.hpp>
 #include <Engine/Data/ViewingParameters.hpp>
 #include <Engine/OpenGL.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
 #include <Engine/Rendering/RenderObjectManager.hpp>
+#include <Engine/Rendering/Renderer.hpp>
 #include <Engine/Scene/LightManager.hpp>
-
 // temporary fix for issue #837
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/Utils/Attribs.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/GeneralProduct.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Inverse.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Product.h>
+#include <Eigen/src/Core/Transpose.h>
+#include <Eigen/src/LU/InverseImpl.h>
+#include <Engine/Data/Mesh.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
+#include <Engine/Data/ShaderProgram.hpp>
+#include <Engine/Rendering/RenderObjectTypes.hpp>
+#include <Engine/Rendering/Renderer.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/GeometryComponent.hpp>
-
-#include <globjects/Framebuffer.h>
-
-#include <globjects/Texture.h>
-
+#include <OpenMesh/Core/System/config.h>
 #include <algorithm>
+#include <glbinding-aux/types_to_string.h>
+#include <glbinding/Boolean8.h>
+#include <glbinding/gl/boolean.h>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/functions.h>
+#include <glbinding/gl45core/boolean.h>
+#include <glbinding/gl45core/enum.h>
+#include <glbinding/gl45core/functions.h>
+#include <globjects/Framebuffer.h>
+#include <globjects/Program.h>
+#include <globjects/base/Instantiator.h>
 #include <iostream>
+#include <iterator>
+#include <math.h>
+#include <optional>
 
 namespace Ra {
 namespace Engine {

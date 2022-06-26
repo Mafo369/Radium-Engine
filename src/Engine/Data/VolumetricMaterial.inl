@@ -4,6 +4,8 @@
 namespace Ra {
 namespace Engine {
 namespace Data {
+class Texture;
+
 // Add a texture as material parameter from an already existing Radium Texture
 inline void VolumetricMaterial::setTexture( Texture* texture ) {
     m_texture = texture;

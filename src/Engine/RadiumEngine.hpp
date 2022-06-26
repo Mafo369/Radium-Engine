@@ -1,20 +1,22 @@
 #pragma once
-#include <Engine/RaEngine.hpp>
-
+#include <Core/CoreMacros.hpp>
 #include <Core/Types.hpp>
 #include <Core/Utils/Singleton.hpp>
-
+#include <Engine/RaEngine.hpp>
+#include <array>
+#include <functional>
+#include <globjects/State.h>
 #include <map>
 #include <memory>
 #include <stack>
 #include <string>
+#include <utility>
 #include <vector>
-
-#include <globjects/State.h>
 
 namespace Ra {
 namespace Core {
 class TaskQueue;
+
 namespace Asset {
 class FileLoaderInterface;
 class FileData;

@@ -4,18 +4,49 @@
 #include <Core/Animation/Pose.hpp>
 #include <Core/Animation/SkinningData.hpp>
 #include <Core/Asset/HandleData.hpp>
+#include <Core/Containers/VectorArray.hpp>
+#include <Core/CoreMacros.hpp>
 #include <Core/Geometry/TopologicalMesh.hpp>
 #include <Core/Geometry/TriangleMesh.hpp>
 #include <Core/Math/DualQuaternion.hpp>
+#include <Core/Types.hpp>
 #include <Core/Utils/Index.hpp>
-
 #include <Engine/Data/Material.hpp>
+#include <Engine/RaEngine.hpp>
 #include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
+#include <OpenMesh/Core/System/config.h>
+#include <map>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
 
 namespace Ra {
+namespace Core {
+namespace Animation {
+class Skeleton;
+} // namespace Animation
+namespace Asset {
+class HandleData;
+} // namespace Asset
+namespace Geometry {
+class PolyMesh;
+class QuadMesh;
+class TriangleMesh;
+} // namespace Geometry
+namespace Utils {
+class Index;
+} // namespace Utils
+} // namespace Core
+
 namespace Engine {
+namespace Data {
+class Material;
+} // namespace Data
+
 namespace Scene {
+class Entity;
 
 /**
  * \brief The SkinningComponent class is responsible for applying Geometric

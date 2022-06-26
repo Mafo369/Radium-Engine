@@ -1,8 +1,11 @@
+#include <Core/CoreMacros.hpp>
 #include <Engine/Scene/SignalManager.hpp>
+#include <map>
 
 namespace Ra {
 namespace Engine {
 namespace Scene {
+struct ItemEntry;
 
 SignalManager::ItemObservable& SignalManager::getEntityCreatedNotifier() {
     return m_entityCreatedCallbacks;

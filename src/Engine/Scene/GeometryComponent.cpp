@@ -1,13 +1,16 @@
-#include <Engine/Scene/GeometryComponent.hpp>
-
-#include <iostream>
-
 #include <Core/Asset/GeometryData.hpp>
+#include <Core/Asset/MaterialData.hpp>
+#include <Core/Asset/VolumeData.hpp>
 #include <Core/Containers/MakeShared.hpp>
-#include <Core/Geometry/Normal.hpp>
+#include <Core/Containers/VectorArray.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/Geometry/Volume.hpp>
+#include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Color.hpp>
-#include <Core/Utils/Log.hpp>
-
+#include <Core/Utils/ContainerIntrospectionInterface.hpp>
 #include <Engine/Data/BlinnPhongMaterial.hpp>
 #include <Engine/Data/Material.hpp>
 #include <Engine/Data/MaterialConverters.hpp>
@@ -15,10 +18,24 @@
 #include <Engine/Data/VolumeObject.hpp>
 #include <Engine/Data/VolumetricMaterial.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
-#include <Engine/Rendering/RenderObjectManager.hpp>
 #include <Engine/Rendering/RenderObjectTypes.hpp>
 #include <Engine/Rendering/RenderTechnique.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
+#include <Engine/Scene/GeometryComponent.hpp>
+#include <functional>
+#include <utility>
+
+namespace Ra {
+namespace Engine {
+namespace Data {
+class Texture;
+} // namespace Data
+namespace Scene {
+class Entity;
+} // namespace Scene
+} // namespace Engine
+} // namespace Ra
 
 #define CHECK_MESH_NOT_NULL \
     CORE_ASSERT( m_displayMesh != nullptr, "DisplayMesh should exist while component is alive" );

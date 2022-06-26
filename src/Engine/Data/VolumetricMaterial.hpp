@@ -1,18 +1,20 @@
 #pragma once
-#include <Engine/RaEngine.hpp>
-
-#include <map>
-#include <string>
-
+#include <Core/CoreMacros.hpp>
+#include <Core/Types.hpp>
 #include <Core/Utils/Color.hpp>
+#include <Eigen/src/Core/util/Memory.h>
 #include <Engine/Data/Material.hpp>
 #include <Engine/Data/Texture.hpp>
+#include <Engine/RaEngine.hpp>
+#include <map>
+#include <string>
 
 namespace Ra {
 namespace Engine {
 namespace Data {
 
 class ShaderProgram;
+class Texture;
 
 /**
  * Implementation of a simple Volumetric Material.

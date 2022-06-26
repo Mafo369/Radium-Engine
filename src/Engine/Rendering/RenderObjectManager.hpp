@@ -1,18 +1,16 @@
 #pragma once
 
+#include <Core/Types.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/IndexMap.hpp>
 #include <Engine/RaEngine.hpp>
-
+#include <Engine/Rendering/RenderObjectTypes.hpp>
 #include <array>
 #include <memory>
 #include <mutex>
 #include <set>
+#include <stddef.h>
 #include <vector>
-
-#include <Core/Utils/Index.hpp>
-#include <Core/Utils/IndexMap.hpp>
-
-#include <Core/Types.hpp>
-#include <Engine/Rendering/RenderObjectTypes.hpp>
 
 namespace Ra {
 namespace Engine {

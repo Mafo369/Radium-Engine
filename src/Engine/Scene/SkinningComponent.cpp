@@ -1,27 +1,64 @@
 ﻿#include <Engine/Scene/SkinningComponent.hpp>
-
-#include <Core/Animation/PoseOperation.hpp>
-#include <Core/Geometry/Normal.hpp>
-
 #include <Core/Animation/DualQuaternionSkinning.hpp>
+#include <Core/Animation/HandleArray.hpp>
+#include <Core/Animation/HandleWeight.hpp>
 #include <Core/Animation/HandleWeightOperation.hpp>
 #include <Core/Animation/LinearBlendSkinning.hpp>
+#include <Core/Animation/Pose.hpp>
+#include <Core/Animation/PoseOperation.hpp>
 #include <Core/Animation/RotationCenterSkinning.hpp>
+#include <Core/Animation/Skeleton.hpp>
 #include <Core/Animation/StretchableTwistableBoneSkinning.hpp>
-#include <Core/Geometry/DistanceQueries.hpp>
-#include <Core/Geometry/TriangleOperation.hpp>
+#include <Core/Asset/HandleData.hpp>
+#include <Core/Containers/AlignedStdVector.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Core/Geometry/TopologicalMesh.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/Math/LinearAlgebra.hpp>
+#include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Color.hpp>
+#include <Core/Utils/Index.hpp>
 #include <Core/Utils/Log.hpp>
-
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/Block.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/GeneralProduct.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/Stride.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/Memory.h>
+#include <Eigen/src/Core/util/Meta.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <Eigen/src/SparseCore/SparseAssign.h>
+#include <Eigen/src/SparseCore/SparseMatrix.h>
+#include <Eigen/src/SparseCore/SparseUtil.h>
 #include <Engine/Data/BlinnPhongMaterial.hpp>
-#include <Engine/Data/Mesh.hpp>
-#include <Engine/Data/ShaderConfigFactory.hpp>
 #include <Engine/Data/Texture.hpp>
-#include <Engine/Data/TextureManager.hpp>
-#include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
 #include <Engine/Rendering/RenderObjectManager.hpp>
 #include <Engine/Rendering/RenderTechnique.hpp>
+#include <Engine/Scene/Component.hpp>
+#include <Engine/Scene/ComponentMessenger.hpp>
+#include <algorithm>
+#include <ext/alloc_traits.h>
+#include <functional>
+#include <new>
+#include <ostream>
+#include <set>
+#include <string.h>
+#include <unordered_map>
 
 using namespace Ra::Core;
 

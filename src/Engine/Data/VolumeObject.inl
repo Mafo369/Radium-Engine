@@ -1,7 +1,16 @@
 #pragma once
 #include <Engine/Data/VolumeObject.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <memory>
 
 namespace Ra {
+namespace Core {
+namespace Geometry {
+class AbstractVolume;
+}  // namespace Geometry
+}  // namespace Core
+
 namespace Engine {
 namespace Data {
 const Core::Geometry::AbstractGeometry& VolumeObject::getAbstractGeometry() const {

@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Engine/Scene/GeometryComponent.hpp>
-
 #include <Core/Containers/MakeShared.hpp>
 #include <Engine/Data/BlinnPhongMaterial.hpp>
 #include <Engine/Data/MaterialConverters.hpp>
@@ -10,10 +9,27 @@
 #include <Engine/Rendering/RenderObjectTypes.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
 #include <Engine/Scene/Entity.hpp>
+#include <Core/Asset/GeometryData.hpp>
+#include <Core/Asset/GeometryData.hpp>
+#include <Core/Asset/MaterialData.hpp>
+#include <Core/Asset/MaterialData.hpp>
+#include <Core/CoreMacros.hpp>
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Core/Types.hpp>
+#include <Engine/Data/Material.hpp>
+#include <Engine/Data/Mesh.hpp>
+#include <Engine/Rendering/RenderTechnique.hpp>
+#include <Engine/Scene/Component.hpp>
+#include <Engine/Scene/ComponentMessenger.hpp>
+#include <functional>
+#include <memory>
+#include <string>
+#include <utility>
 
 namespace Ra {
 namespace Engine {
 namespace Scene {
+class Entity;
 
 template <typename CoreMeshType>
 SurfaceMeshComponent<CoreMeshType>::SurfaceMeshComponent(

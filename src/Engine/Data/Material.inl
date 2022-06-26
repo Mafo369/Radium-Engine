@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <utility>
+
 namespace Ra {
 namespace Engine {
 namespace Data {

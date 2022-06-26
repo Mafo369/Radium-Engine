@@ -2,6 +2,14 @@
 
 #include "SpotLight.hpp"
 
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Core/CoreMacros.hpp>
+#include <Core/Math/Math.hpp>
+#include <Engine/Scene/Light.hpp>
+
 namespace Ra {
 namespace Engine {
 namespace Scene {

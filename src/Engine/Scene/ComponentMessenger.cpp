@@ -1,5 +1,7 @@
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
 
+#include <array>
 #include <functional>
 
 namespace Ra {

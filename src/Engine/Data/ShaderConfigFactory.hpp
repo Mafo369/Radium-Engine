@@ -1,13 +1,14 @@
 #pragma once
 
 #include <Core/Utils/StdOptional.hpp>
-#include <string>
-
 #include <Engine/Data/ShaderConfiguration.hpp>
+#include <Engine/RaEngine.hpp>
+#include <string>
 
 namespace Ra {
 namespace Engine {
 namespace Data {
+class ShaderConfiguration;
 
 /** Factory that manage the set of named shader configurations
  * Usefull for the management of shader libraries where a shader configuration (source code,

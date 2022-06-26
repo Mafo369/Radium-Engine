@@ -1,12 +1,9 @@
-#include <Engine/Data/Mesh.hpp>
-
-#include <numeric>
-
+#include <Core/CoreMacros.hpp>
 #include <Core/Utils/Attribs.hpp>
 #include <Core/Utils/Log.hpp>
-#include <Engine/Data/ShaderProgram.hpp>
-#include <Engine/OpenGL.hpp>
-
+#include <Engine/Data/Mesh.hpp>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/types.h>
 #include <globjects/Buffer.h>
 #include <globjects/VertexArray.h>
 

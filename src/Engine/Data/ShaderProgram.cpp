@@ -1,20 +1,31 @@
+#include <Core/CoreMacros.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/Log.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
 #include <Engine/Data/ShaderProgram.hpp>
+#include <Engine/Data/Texture.hpp>
 #include <Engine/OpenGL.hpp>
-
+#include <algorithm>
+#include <glbinding/gl/boolean.h>
 #include <glbinding/gl/enum.h>
+#include <glbinding/gl/types.h>
+#include <glbinding/gl45core/boolean.h>
+#include <glbinding/gl45core/enum.h>
 #include <globjects/NamedString.h>
 #include <globjects/Program.h>
 #include <globjects/Shader.h>
-#include <globjects/Texture.h>
+#include <globjects/base/AbstractStringSource.h>
 #include <globjects/base/File.h>
+#include <globjects/base/Instantiator.h>
 #include <globjects/base/StaticStringSource.h>
-
-#include <Core/Utils/Log.hpp>
-#include <Engine/Data/Texture.hpp>
-
-#include <algorithm>
+#include <istream>
+#include <iterator>
 #include <numeric> // for std::accumulate
 #include <regex>
+#include <stddef.h>
+#include <type_traits>
 
 namespace Ra {
 namespace Engine {

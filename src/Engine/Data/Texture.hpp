@@ -1,13 +1,17 @@
 #pragma once
 
-#include <Engine/RaEngine.hpp>
-
-#include <memory>
-#include <string>
-
-#include <Engine/OpenGL.hpp>
-
+#include <Core/CoreMacros.hpp>
 #include <Core/Utils/Color.hpp>
+#include <Engine/OpenGL.hpp>
+#include <Engine/RaEngine.hpp>
+#include <glbinding/gl/boolean.h>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/types.h>
+#include <glbinding/gl45core/enum.h>
+#include <memory>
+#include <stddef.h>
+#include <stdint.h>
+#include <string>
 
 namespace globjects {
 class Texture;

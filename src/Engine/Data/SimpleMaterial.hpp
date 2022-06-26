@@ -1,13 +1,11 @@
 #pragma once
 
-#include <Engine/RaEngine.hpp>
-
-#include <map>
-#include <string>
-
 #include <Core/Utils/Color.hpp>
 #include <Engine/Data/Material.hpp>
 #include <Engine/Data/Texture.hpp>
+#include <Engine/RaEngine.hpp>
+#include <map>
+#include <string>
 
 namespace Ra {
 namespace Engine {

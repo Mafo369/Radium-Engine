@@ -1,10 +1,19 @@
-#include <Engine/Scene/EntityManager.hpp>
-
+#include <Core/CoreMacros.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/IndexMap.hpp>
 #include <Core/Utils/Log.hpp>
-
 #include <Engine/RadiumEngine.hpp>
+#include <Engine/Scene/Entity.hpp>
+#include <Engine/Scene/EntityManager.hpp>
+#include <Engine/Scene/ItemEntry.hpp>
 #include <Engine/Scene/SignalManager.hpp>
 #include <Engine/Scene/SystemDisplay.hpp>
+#include <algorithm>
+#include <deque>
+#include <iterator>
+#include <ostream>
+#include <stddef.h>
+#include <utility>
 
 namespace Ra {
 namespace Engine {

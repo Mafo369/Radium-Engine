@@ -1,6 +1,5 @@
-#include <Core/Utils/Log.hpp>
 #include <Engine/Data/RenderParameters.hpp>
-#include <Engine/Data/ShaderProgram.hpp>
+#include <set>
 
 namespace Ra {
 namespace Engine {

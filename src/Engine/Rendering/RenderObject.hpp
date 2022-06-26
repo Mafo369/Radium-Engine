@@ -1,17 +1,16 @@
 #pragma once
 
+#include <Core/Types.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/IndexedObject.hpp>
+#include <Eigen/src/Core/util/Memory.h>
+#include <Engine/Data/ShaderProgram.hpp>
 #include <Engine/RaEngine.hpp>
-
+#include <Engine/Rendering/RenderObjectTypes.hpp>
+#include <Engine/Rendering/RenderTechnique.hpp>
 #include <memory>
 #include <mutex>
 #include <string>
-
-#include <Core/Types.hpp>
-#include <Core/Utils/IndexedObject.hpp>
-
-#include <Engine/Data/ShaderProgram.hpp>
-#include <Engine/Rendering/RenderObjectTypes.hpp>
-#include <Engine/Rendering/RenderTechnique.hpp>
 
 namespace Ra {
 namespace Engine {
@@ -25,6 +24,7 @@ class Displayable;
 class Material;
 struct ViewingParameters;
 class RenderParameters;
+class ShaderProgram;
 } // namespace Data
 
 namespace Rendering {

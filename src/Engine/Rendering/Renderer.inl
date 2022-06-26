@@ -1,8 +1,23 @@
 #pragma once
 #include <Engine/Rendering/Renderer.hpp>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <stddef.h>
+#include <Core/CoreMacros.hpp>
+#include <Core/Types.hpp>
+#include <Core/Utils/Color.hpp>
+#include <Core/Utils/Index.hpp>
+#include <Core/Utils/Index.hpp>
+#include <algorithm>
+#include <mutex>
+#include <tuple>
+#include <vector>
 
 namespace Ra {
 namespace Engine {
+namespace Data {
+class Texture;
+}  // namespace Data
+
 namespace Rendering {
 
 inline const std::vector<std::tuple<int, int, int>>& Renderer::PickingResult::getIndices() const {

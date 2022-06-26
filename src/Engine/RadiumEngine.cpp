@@ -1,21 +1,22 @@
-#include <Engine/RadiumEngine.hpp>
-
 #include <Core/Asset/FileData.hpp>
 #include <Core/Asset/FileLoaderInterface.hpp>
 #include <Core/Resources/Resources.hpp>
+#include <Core/Utils/Log.hpp>
 #include <Core/Utils/StringUtils.hpp>
-
 #include <Engine/Data/BlinnPhongMaterial.hpp>
 #include <Engine/Data/LambertianMaterial.hpp>
-#include <Engine/Data/MaterialConverters.hpp>
 #include <Engine/Data/PlainMaterial.hpp>
 #include <Engine/Data/ShaderConfigFactory.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
 #include <Engine/Data/TextureManager.hpp>
 #include <Engine/Data/VolumetricMaterial.hpp>
 #include <Engine/FrameInfo.hpp>
+#include <Engine/OpenGL.hpp>
+#include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
 #include <Engine/Rendering/RenderObjectManager.hpp>
+#include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
 #include <Engine/Scene/DefaultCameraManager.hpp>
 #include <Engine/Scene/Entity.hpp>
@@ -23,15 +24,21 @@
 #include <Engine/Scene/SignalManager.hpp>
 #include <Engine/Scene/System.hpp>
 #include <Engine/Scene/SystemDisplay.hpp>
-
-#include <cstdio>
+#include <algorithm>
+#include <glbinding/gl/enum.h>
+#include <glbinding/gl/functions.h>
+#include <glbinding/gl45core/enum.h>
+#include <glbinding/gl45core/functions.h>
 #include <iostream>
-#include <streambuf>
+#include <limits>
+#include <math.h>
+#include <optional>
 #include <string>
-#include <thread>
 
 namespace Ra {
 namespace Engine {
+
+RA_SINGLETON_IMPLEMENTATION( RadiumEngine );
 
 using namespace Core::Utils; // log
 using namespace Core::Asset;
@@ -298,8 +305,6 @@ void RadiumEngine::registerFileLoader( std::shared_ptr<FileLoaderInterface> file
 const std::vector<std::shared_ptr<FileLoaderInterface>>& RadiumEngine::getFileLoaders() const {
     return m_fileLoaders;
 }
-
-RA_SINGLETON_IMPLEMENTATION( RadiumEngine );
 
 const FileData& RadiumEngine::getFileData() const {
     CORE_ASSERT( m_loadingState, "Access to file content is only available at loading time." );

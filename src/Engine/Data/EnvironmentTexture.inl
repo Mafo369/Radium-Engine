@@ -1,4 +1,5 @@
 #include <Engine/Data/EnvironmentTexture.hpp>
+#include <string>
 
 namespace Ra {
 namespace Engine {

@@ -1,14 +1,31 @@
 #include <Core/Asset/Camera.hpp>
-#include <Engine/Scene/CameraComponent.hpp>
-
 #include <Core/Containers/MakeShared.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
 #include <Core/Math/Math.hpp>
+#include <Core/Utils/Color.hpp>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/DiagonalMatrix.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Geometry/Scaling.h>
+#include <Eigen/src/Geometry/Transform.h>
 #include <Engine/Data/Mesh.hpp>
 #include <Engine/Data/PlainMaterial.hpp>
-#include <Engine/Data/ShaderConfigFactory.hpp>
 #include <Engine/Rendering/RenderObject.hpp>
+#include <Engine/Rendering/RenderObjectTypes.hpp>
+#include <Engine/Rendering/RenderTechnique.hpp>
+#include <Engine/Scene/CameraComponent.hpp>
+#include <math.h>
+#include <utility>
+#include <vector>
 
 namespace Ra {
+namespace Engine {
+namespace Data {
+class Material;
+} // namespace Data
+} // namespace Engine
 
 using Core::Math::Pi;
 using Core::Math::PiDiv2;

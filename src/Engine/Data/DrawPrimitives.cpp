@@ -1,19 +1,67 @@
-#include <Engine/Data/DrawPrimitives.hpp>
-
-#include <Core/Geometry/MeshPrimitives.hpp>
-#include <Core/Geometry/StandardAttribNames.hpp>
-#include <Core/Utils/Color.hpp>
-
-#include <Engine/Data/Mesh.hpp>
-#include <Engine/Data/ShaderConfigFactory.hpp>
-#include <Engine/Rendering/RenderObject.hpp>
-#include <Engine/Rendering/RenderTechnique.hpp>
-
 #include <Core/Containers/MakeShared.hpp>
+#include <Core/Geometry/AbstractGeometry.hpp>
+#include <Core/Geometry/IndexedGeometry.hpp>
+#include <Core/Geometry/MeshPrimitives.hpp>
+#include <Core/Geometry/Obb.hpp>
+#include <Core/Geometry/Spline.hpp>
+#include <Core/Geometry/StandardAttribNames.hpp>
+#include <Core/Geometry/TriangleMesh.hpp>
+#include <Core/Math/LinearAlgebra.hpp>
+#include <Core/Math/Math.hpp>
+#include <Core/Utils/Attribs.hpp>
+#include <Core/Utils/Color.hpp>
+#include <Eigen/src/Core/Assign.h>
+#include <Eigen/src/Core/AssignEvaluator.h>
+#include <Eigen/src/Core/Block.h>
+#include <Eigen/src/Core/CommaInitializer.h>
+#include <Eigen/src/Core/CwiseBinaryOp.h>
+#include <Eigen/src/Core/CwiseNullaryOp.h>
+#include <Eigen/src/Core/DenseBase.h>
+#include <Eigen/src/Core/DenseCoeffsBase.h>
+#include <Eigen/src/Core/Diagonal.h>
+#include <Eigen/src/Core/Dot.h>
+#include <Eigen/src/Core/GeneralProduct.h>
+#include <Eigen/src/Core/GenericPacketMath.h>
+#include <Eigen/src/Core/Inverse.h>
+#include <Eigen/src/Core/MathFunctions.h>
+#include <Eigen/src/Core/Matrix.h>
+#include <Eigen/src/Core/MatrixBase.h>
+#include <Eigen/src/Core/NoAlias.h>
+#include <Eigen/src/Core/Product.h>
+#include <Eigen/src/Core/Redux.h>
+#include <Eigen/src/Core/SelfCwiseBinaryOp.h>
+#include <Eigen/src/Core/Stride.h>
+#include <Eigen/src/Core/Transpose.h>
+#include <Eigen/src/Core/TriangularMatrix.h>
+#include <Eigen/src/Core/Visitor.h>
+#include <Eigen/src/Core/arch/SSE/PacketMath.h>
+#include <Eigen/src/Core/functors/BinaryFunctors.h>
+#include <Eigen/src/Core/util/IntegralConstant.h>
+#include <Eigen/src/Core/util/Memory.h>
+#include <Eigen/src/Core/util/XprHelper.h>
+#include <Eigen/src/Geometry/OrthoMethods.h>
+#include <Eigen/src/Geometry/Transform.h>
+#include <Eigen/src/Householder/BlockHouseholder.h>
+#include <Eigen/src/Householder/Householder.h>
+#include <Eigen/src/Jacobi/Jacobi.h>
+#include <Eigen/src/LU/InverseImpl.h>
+#include <Engine/Data/DrawPrimitives.hpp>
+#include <Engine/Data/Mesh.hpp>
 #include <Engine/Data/PlainMaterial.hpp>
-
+#include <Engine/Rendering/RenderObject.hpp>
+#include <Engine/Rendering/RenderObjectTypes.hpp>
+#include <Engine/Rendering/RenderTechnique.hpp>
+#include <OpenMesh/Core/Mesh/SmartHandles.hh>
+#include <OpenMesh/Core/System/config.h>
 #include <algorithm>
+#include <ext/alloc_traits.h>
+#include <functional>
+#include <map>
+#include <math.h>
+#include <new>
 #include <numeric>
+#include <utility>
+#include <vector>
 
 namespace Ra {
 

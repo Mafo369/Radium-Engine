@@ -1,10 +1,12 @@
+#include <Core/Utils/Index.hpp>
+#include <Engine/Data/Material.hpp>
 #include <Engine/Data/PlainMaterial.hpp>
-
 #include <Engine/Data/ShaderConfigFactory.hpp>
+#include <Engine/Data/ShaderConfiguration.hpp>
 #include <Engine/Data/ShaderProgramManager.hpp>
-#include <Engine/Data/TextureManager.hpp>
 #include <Engine/RadiumEngine.hpp>
 #include <Engine/Rendering/RenderTechnique.hpp>
+#include <optional>
 
 namespace Ra {
 namespace Engine {
