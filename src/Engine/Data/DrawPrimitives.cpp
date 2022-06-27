@@ -54,7 +54,7 @@
 #include <OpenMesh/Core/Mesh/SmartHandles.hh>
 #include <OpenMesh/Core/System/config.h>
 #include <algorithm>
-#include <ext/alloc_traits.h>
+
 #include <functional>
 #include <map>
 #include <math.h>

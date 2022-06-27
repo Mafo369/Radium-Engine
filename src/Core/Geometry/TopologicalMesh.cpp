@@ -24,7 +24,7 @@
 #include <OpenMesh/Core/Mesh/SmartHandles.hh>
 #include <algorithm>
 #include <assert.h>
-#include <ext/alloc_traits.h>
+
 #include <initializer_list>
 #include <memory>
 #include <new>

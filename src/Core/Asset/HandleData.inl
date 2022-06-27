@@ -1,7 +1,6 @@
 #pragma once
 #include <Core/Asset/HandleData.hpp>
 #include <Core/Utils/Log.hpp>
-#include <ext/alloc_traits.h>
 #include <map>
 #include <memory>
 #include <ostream>

@@ -52,7 +52,7 @@
 #include <Engine/Scene/Component.hpp>
 #include <Engine/Scene/ComponentMessenger.hpp>
 #include <algorithm>
-#include <ext/alloc_traits.h>
+
 #include <functional>
 #include <new>
 #include <ostream>

@@ -10,7 +10,6 @@
 #include <Eigen/src/Core/Matrix.h>
 #include <Eigen/src/Core/MatrixBase.h>
 #include <Eigen/src/Core/util/Memory.h>
-#include <ext/alloc_traits.h>
 #include <stddef.h>
 #include <OpenMesh/Core/Mesh/CirculatorsT.hh>
 #include <OpenMesh/Core/Mesh/Handles.hh>

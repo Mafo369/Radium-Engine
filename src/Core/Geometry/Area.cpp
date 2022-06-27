@@ -23,7 +23,7 @@
 #include <Eigen/src/SparseCore/SparseMatrix.h>
 #include <Eigen/src/SparseCore/SparseMatrixBase.h>
 #include <algorithm>
-#include <ext/alloc_traits.h>
+
 #include <new>
 #include <string.h>
 #include <utility>

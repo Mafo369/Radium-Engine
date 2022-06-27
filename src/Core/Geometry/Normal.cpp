@@ -18,7 +18,7 @@
 #include <Eigen/src/Core/util/XprHelper.h>
 #include <Eigen/src/Geometry/OrthoMethods.h>
 #include <Eigen/src/SparseCore/SparseMatrix.h>
-#include <ext/alloc_traits.h>
+
 #include <memory>
 #include <stddef.h>
 #include <vector>

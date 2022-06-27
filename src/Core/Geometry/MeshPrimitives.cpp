@@ -20,7 +20,7 @@
 #include <OpenMesh/Core/System/config.h>
 #include <algorithm>
 #include <array>
-#include <ext/alloc_traits.h>
+
 #include <memory>
 #include <new>
 #include <utility>

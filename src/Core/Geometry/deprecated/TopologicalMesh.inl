@@ -15,7 +15,7 @@
 #include <Eigen/src/Core/functors/BinaryFunctors.h>
 #include <Eigen/src/Core/util/XprHelper.h>
 #include <OpenMesh/Core/System/config.h>
-#include <ext/alloc_traits.h>
+
 #include <stddef.h>
 #include <OpenMesh/Core/IO/StoreRestore.hh>
 #include <OpenMesh/Core/Mesh/CirculatorsT.hh>

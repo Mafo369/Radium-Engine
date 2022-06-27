@@ -24,7 +24,7 @@
 #include <OpenMesh/Core/Mesh/PolyConnectivity.hh>
 #include <OpenMesh/Core/Mesh/SmartHandles.hh>
 #include <algorithm>
-#include <ext/alloc_traits.h>
+
 #include <initializer_list>
 #include <numeric>
 #include <set>

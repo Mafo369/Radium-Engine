@@ -24,7 +24,7 @@
 #include <Eigen/src/SparseCore/SparseMatrixBase.h>
 #include <Eigen/src/SparseCore/SparseProduct.h>
 #include <algorithm>
-#include <ext/alloc_traits.h>
+
 #include <new>
 #include <string.h>
 #include <utility>

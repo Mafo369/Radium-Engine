@@ -22,7 +22,7 @@
 #include <Engine/Rendering/DebugRender.hpp>
 #include <OpenMesh/Core/System/config.h>
 #include <algorithm>
-#include <ext/alloc_traits.h>
+
 #include <glbinding/gl/boolean.h>
 #include <glbinding/gl/enum.h>
 #include <glbinding/gl/functions.h>

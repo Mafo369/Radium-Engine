@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <chrono>
 #include <cpplocate/cpplocate.h>
-#include <ext/alloc_traits.h>
+
 #include <filesystem>
 #include <stack>
 #include <utility>

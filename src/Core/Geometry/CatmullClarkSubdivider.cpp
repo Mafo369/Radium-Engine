@@ -18,7 +18,7 @@
 #include <OpenMesh/Core/Mesh/PolyConnectivity_inline_impl.hh>
 #include <OpenMesh/Core/Mesh/SmartHandles.hh>
 #include <OpenMesh/Core/System/config.h>
-#include <ext/alloc_traits.h>
+
 #include <memory>
 #include <numeric>
 

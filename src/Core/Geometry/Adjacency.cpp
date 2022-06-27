@@ -25,7 +25,7 @@
 #include <Eigen/src/SparseCore/SparseRedux.h>
 #include <Eigen/src/SparseCore/SparseUtil.h>
 #include <algorithm>
-#include <ext/alloc_traits.h>
+
 #include <new>
 #include <string.h>
 #include <utility>

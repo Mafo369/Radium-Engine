@@ -19,7 +19,7 @@
 #include <OpenMesh/Core/Mesh/SmartHandles.hh>
 #include <OpenMesh/Core/System/config.h>
 #include <assert.h>
-#include <ext/alloc_traits.h>
+
 #include <memory>
 #include <numeric>
 

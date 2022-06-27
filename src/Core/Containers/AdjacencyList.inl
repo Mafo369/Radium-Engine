@@ -1,6 +1,5 @@
 #pragma once
 #include <Core/Containers/AdjacencyList.hpp>
-#include <ext/alloc_traits.h>
 #include <memory>
 #include <vector>
 

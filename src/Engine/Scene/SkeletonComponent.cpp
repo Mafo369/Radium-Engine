@@ -57,7 +57,7 @@
 #include <OpenMesh/Core/System/config.h>
 #include <algorithm>
 #include <deque>
-#include <ext/alloc_traits.h>
+
 #include <functional>
 #include <iostream>
 #include <limits>

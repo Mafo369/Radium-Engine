@@ -8,7 +8,6 @@
 #include <Eigen/src/Core/Dot.h>
 #include <Eigen/src/Core/MatrixBase.h>
 #include <OpenMesh/Core/System/config.h>
-#include <ext/alloc_traits.h>
 #include <OpenMesh/Core/Mesh/PolyMeshT.hh>
 #include <random>
 #include <algorithm>
