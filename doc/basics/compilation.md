@@ -66,7 +66,7 @@ Radium offers the following build options:
 // Enable coverage, gcc only. Experimental, need ENABLE_TESTING
 RADIUM_ENABLE_COVERAGE:BOOL=OFF
 
-// Enable examples app build. To install examples, build explicitly the target Intsall_RadiumExamples.
+// Enable examples app build. To install examples, build explicitly the target Install_RadiumExamples.
 RADIUM_ENABLE_EXAMPLES:BOOL=OFF
 
 // Enable testing. Tests are automatically built with target all, run with target check or test.

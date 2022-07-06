@@ -36,7 +36,7 @@ option(
 )
 option(
     RADIUM_ENABLE_EXAMPLES
-    "Enable examples app build. To install examples, build explicitly the target Intsall_RadiumExamples."
+    "Enable examples app build. To install examples, build explicitly the target Install_RadiumExamples."
     OFF
 )
 option(RADIUM_ENABLE_COVERAGE "Enable coverage, gcc only. Experimental, need ENABLE_TESTING" OFF)
